@@ -1,0 +1,109 @@
+header{ 
+    padding-left: 30px;
+    padding-right: 50px;
+    width: 100%;
+    
+}
+
+.container_header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbar{
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    
+}
+
+.navbar a:hover{
+    border-bottom: 2px solid black;
+    transform: translateY(5px);
+}
+
+.menu-icon{
+    display: none;
+}
+
+.button_doe{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+    height: 30px;
+    background-color: #0199c8;
+    border-radius: 32px;
+    color: #fff;
+    font-weight: 500;
+}
+
+@media (max-width:1090px){
+    
+    header{
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        height: 50px;
+        padding-left: 0;
+        padding-right: 0px;
+        
+    }
+    .container_header{
+        display: flex;
+        width: 100%;
+    }
+    body{
+        overflow-x:  hidden;
+    }
+
+    .menu-icon{
+        padding-right: 30px;
+        display: block;
+    }
+    .navbar a{
+        padding-left: 10px;
+    }
+    .navbar li{
+        display: flex;
+        width: 100%;
+        margin-top: 10px;
+        padding: 0px;
+    }
+    .navbar{
+        display: none;
+        position: absolute;
+        top: 10%;
+        width: 200px;  
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        border-radius: 10px;
+        transition: all .50s ease;
+        background-color: #fff;
+        
+        
+    }
+    .navbar a:hover{
+        transform: translateY(5px);
+    }
+    .navbar.open{
+        display: flex;
+        justify-content: flex-start;
+         right: 2%;
+    }
+    .logo_culturalPath{
+        width: 15%;
+    }
+    .button_doe{
+        width:80px;
+        font-size: 0.8rem;
+    }
+    .navbar li{
+    
+}
+}
+
+
+ 

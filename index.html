@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/reset.css" />
+    <link rel="stylesheet" href="./css/body.css" />
+    <link rel="stylesheet" href="./css/header.css" />
+    <link rel="stylesheet" href="./css/main.css" />
+    <link rel="stylesheet" href="./css/footer.css" />
+    <link rel="stylesheet" href="./css/recreacao/recreacao.css" />
+    <script
+      src="https://kit.fontawesome.com/324b71f187.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./js/menuHeader.js" defer></script>
+    <script src="./js/app.js" defer type="module"></script>
+  </head>
+
+  <body>
+    <header>
+      <div class="container_header">
+        <img
+          class="logo_culturalPath"
+          src="./img/logoCulturalPath.png"
+          alt=""
+        />
+        <ul class="navbar">
+          <li><a href="/">Cultural Path</a></li>
+          <li><a href="/encontros" onclick="route()">Encontros</a></li>
+          <li><a href="/parceiro" onclick="route()">Seja um Parceiro</a></li>
+          <li><a href="/calendario" onclick="route()">Calendário</a></li>
+          <li><a href="/voluntario" onclick="route()">Voluntários</a></li>
+          <li><a href="/recreacao" onclick="route()">Recreação</a></li>
+        </ul>
+        <div class="button_doe" id="button_doe">DOE</div>
+        <div id="menu-icon" class="menu-icon">
+          <i class="fas fa-bars"></i>
+        </div>
+      </div>
+    </header>
+    <main id="root">
+      <container class="page__recreacao" id="container">
+        <div class="recreacao__title">RECREAÇÃO</div>
+        <div class="recreacao__videos">
+          <div class="video__title">ASSISTA NOSSOS CONTEÚDO INFANTIL</div>
+          <div class="video__container">
+            <img
+              class="video"
+              src="https://i.ytimg.com/vi/d_7ACUhbTvE/maxresdefault.jpg"
+              alt=""
+            />
+            <img
+              class="video"
+              src="https://i.ytimg.com/vi/uDz8-zG1CZk/maxresdefault.jpg"
+              alt=""
+            />
+            <img
+              class="video"
+              src="https://i.ytimg.com/vi/d_7ACUhbTvE/maxresdefault.jpg"
+              alt=""
+            />
+            <img
+              class="video"
+              src="https://i.ytimg.com/vi/uDz8-zG1CZk/maxresdefault.jpg"
+              alt=""
+            />
+          </div>
+        </div>
+      </container>
+    </main>
+
+    <footer>
+      <div class="container-footer">
+        <div class="container-logo-contato">
+          <img class="logo-footer" src="./img/logoCulturalPath.png" alt="" />
+          <div class="teste">
+            <div class="fale-conosco">
+              <h5>Fale Conosco</h5>
+              <span style="color: black; font-size: 0.5rem"
+                >contao@culturalpath.org.br</span
+              >
+              <span style="color: black; font-size: 0.5rem"
+                >55 (11)942316789</span
+              >
+            </div>
+            <div class="horario-funcionamento">
+              <h5>Horário de funcionamento</h5>
+              <span style="color: black; font-size: 0.5rem"
+                >De Segunda a Sexta das 09h00 às 18h00</span
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="container-rede-social">
+          <div class="links-button">
+            <a href="#">Página inicial</a>
+            <a href="#">Seja nosso Parceiro</a>
+            <button class="button-footer" id="button-footer">Doe Agora</button>
+          </div>
+          <div class="rede-social">
+            <h5>Nossas redes:</h5>
+            <div class="icones">
+              <i class="fab fa-instagram"></i>
+              <i class="fab fa-linkedin"></i>
+              <i class="fab fa-facebook"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="barra"></div>
+    </footer>
+  </body>
+</html>
