@@ -1,42 +1,71 @@
-/* <container class="page__recreacao" id="container">
-<div class="recreacao__title">RECREAÇÃO</div>
-<div class="recreacao__videos">
-    <div class="video__title">ASSISTA NOSSOS CONTEÚDO INFANTIL</div>
-    <div class="video__container">
-        <div class="video">
-            <img src="https://i.ytimg.com/vi/d_7ACUhbTvE/maxresdefault.jpg" alt="">
-        </div>
-        <div class="video"> 
-            <img src="https://i.ytimg.com/vi/uDz8-zG1CZk/maxresdefault.jpg" alt="">
-        </div>
-        <div class="video"> 
-            <img src="https://i.ytimg.com/vi/d_7ACUhbTvE/maxresdefault.jpg" alt="">
-        </div>
-        <div class="video"> 
-            <img src="https://i.ytimg.com/vi/uDz8-zG1CZk/maxresdefault.jpg" alt="">
-        </div>
-    </div>
-</div> */
-
-.page__recreacao{
-    display: flex;
-    flex-direction: column;
-    height: fit-content;
-    
+.page__recreacao {
+  display: flex;
+  flex-direction: column;
+  height: fit-content;
 }
 
-.recreacao__title{
-    display: flex;
+.recreacao__title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100px;
+  background-color: #009d78;
+  color: #fff;
+  font-size: 2.5rem;
+  font-weight: 800;
+}
+
+.video {
+  width: 100%;
+  gap: 32px;
+}
+
+.video__container {
+  width: 100%;
+  height: 200px;
+}
+
+.recreacao__videos {
+  padding-top: 64px;
+}
+
+.cultura {
+  width: 100%;
+  height: fit-content;
+  padding: 32px;
+}
+
+.cultural__container {
+  display: flex;
+  width: 100%;
+  height: fit-content;
+  border-radius: 32px;
+  background-color: #f2f2f2;
+}
+
+.estado {
+  /* width: auto; */
+  height: 100vh;
+  background-image: url('../../img/acre.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+@media (max-width: 768px) {
+  .cultural__container {
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 100%;
-    height: 100px;
-    background-color: #009d78;
-    color: #fff;
-    font-size: 2.5rem;
-    font-weight: 800;
-}
+  }
+  svg {
+    width: 80%;
+    height: fit-content;
+  }
 
-.video{
-    width: 300px;
+  .estado {
+    width: 100%;
+    background-size: contain;
+    height: auto;
+  }
 }

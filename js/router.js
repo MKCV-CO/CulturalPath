@@ -2,6 +2,7 @@
 
 
 import { alterColor } from './style.js';
+import { createCarousel } from './style.js';
 
 
 const routes = {
@@ -24,19 +25,20 @@ const route = async () => {
 
   document.getElementById("root").innerHTML = html;
 
-  if (path == "/" || path == "/index.html") { 
-    loadBannerFilm();
+  if (path == "/" || path == "/index.html") {
     alterColor('#0D9ECC')
-  }else if (path == "/encontros"){
+  } else if (path == "/encontros") {
     alterColor('#085871')
-  }else if (path == "/voluntario"){
+  } else if (path == "/voluntario") {
     alterColor('#7675DC')
-  }else if (path == "/calendario"){
+  } else if (path == "/calendario") {
     alterColor('#79132A')
-  }else if (path == "/parceiro"){
+  } else if (path == "/parceiro") {
     alterColor('#E99922')
-  }else if (path == "/recreacao"){
+  } else if (path == "/recreacao") {
     alterColor('#009d78')
+    createCarousel()
+
   }
 }
 

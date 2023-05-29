@@ -1,1 +1,162 @@
-<container class="page__voluntario" id="container">PÁGINA DE VOLUNTARIO</container>
+<container class="page__voluntario" id="container">
+  <div class="voluntario__title">VOLUNTÁRIOS</div>
+
+  <form action="">
+    <div class="form__content">
+      <label for="nome">NOME:</label>
+      <input
+        type="text"
+        name="nome"
+        id="nome"
+        placeholder="Digite seu nome"
+        class="input" />
+    </div>
+    <div class="form__content">
+      <label for="cpf">CPF: </label>
+      <input
+        type="text"
+        name="cpf"
+        id="cpf"
+        placeholder="Digite seu CPF"
+        class="input"
+        onkeypress="$(this).mask('000.000.000-00');" />
+    </div>
+    <div class="form__content">
+      <label for="rg">RG: </label>
+      <input
+        type="text"
+        name="rg"
+        id="rg"
+        placeholder="Digite seu RG"
+        class="input"
+        onkeypress="$(this).mask('00.000.000-0');" />
+    </div>
+    <div class="form__content">
+      <label for="email">E-MAIL:</label>
+      <input
+        type="email"
+        name="email"
+        id="email"
+        placeholder="Digite seu e-mail"
+        class="input" />
+    </div>
+    <div class="form__content">
+      <label for="telefone">TELEFONE:</label>
+      <input
+        type="tel"
+        name="telefone"
+        id="telefone"
+        placeholder="Digite seu telefone"
+        class="input"
+        onkeypress="$(this).mask('(00) 0 0000-0000');" />
+    </div>
+    <div class="form__content">
+      <label for="dt_nasc">DATA DE NASCIMENTO:</label>
+      <input
+        type="date"
+        name="dt_nasc"
+        id="dt_nasc"
+        placeholder="EX: 01/01/2001"
+        class="input" />
+    </div>
+    <div class="form__content">
+      <label for="idade">IDADE:</label>
+      <input
+        type="text"
+        name="idade"
+        id="idade"
+        placeholder="campo automático"
+        class="input"
+        disabled />
+    </div>
+    <div class="form__content">
+      <label for="civil">ESTADO CIVIL</label>
+      <select name="civil" id="civil" class="input">
+        <option value="solteiro">Solteiro(a)</option>
+        <option value="casado">Casado(a)</option>
+        <option value="viuvo">Viúvo(a)</option>
+        <option value="divorciado">Divorciado(a)</option>
+        <option value="nocivil">Não desejo informar</option>
+      </select>
+    </div>
+    <div class="form__content">
+      <label for="genero">GÊNERO</label>
+      <select name="genero" id="genero" class="input">
+        <option value="masculino">Masculino</option>
+        <option value="feminino">Feminino</option>
+        <option value="n_binario">Não-binário</option>
+        <option value="nogenero">Não desejo informar</option>
+      </select>
+    </div>
+  </form>
+  <form action="">
+    <div class="form__content">
+      <label for="cep">CEP:</label>
+      <input
+        type="text"
+        name="cep"
+        id="cep"
+        placeholder="Digite seu cep"
+        class="input"
+        onkeypress="$(this).mask('00000-000');" />
+    </div>
+    <div class="form__content">
+      <label for="endereco">ENDEREÇO: </label>
+      <input
+        type="text"
+        name="endereco"
+        id="endereco"
+        placeholder="Digite seu endereco"
+        class="input disable"
+        disabled />
+    </div>
+    <div class="form__content">
+      <label for="numero">NÚMERO: </label>
+      <input
+        type="text"
+        name="numero"
+        id="numero"
+        placeholder="Digite seu numero"
+        class="input" />
+    </div>
+    <div class="form__content">
+      <label for="bairro">BAIRRO:</label>
+      <input
+        type="bairro"
+        name="bairro"
+        id="bairro"
+        placeholder="Digite seu bairro"
+        class="input disable"
+        disabled />
+    </div>
+    <div class="form__content">
+      <label for="complemento">COMPLEMENTO:</label>
+      <input
+        type="text"
+        name="complemento"
+        id="complemento"
+        placeholder="Digite seu complemento"
+        class="input" />
+    </div>
+    <div class="form__content">
+      <label for="cidade">CIDADE:</label>
+      <input
+        type="text"
+        name="cidade"
+        id="cidade"
+        placeholder="Digite sua cidade"
+        class="input disable"
+        disabled />
+    </div>
+    <div class="form__content">
+      <label for="estado">ESTADO:</label>
+      <input
+        type="text"
+        name="estado"
+        id="estado"
+        placeholder="campo automático"
+        class="input disable"
+        disabled />
+    </div>
+  </form>
+</container>
