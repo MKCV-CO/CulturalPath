@@ -1,311 +1,257 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Home</title>
-    <script src="https://www.gstatic.com/firebasejs/8.3.3/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.3.3/firebase-storage.js"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;700&display=swap"
-      rel="stylesheet" />
-    <link
-      href="https://cdn.jsdelivr.net/npm/glider-js@1/glider.min.css"
-      rel="stylesheet" />
 
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Home</title>
+  <script src="https://www.gstatic.com/firebasejs/8.3.3/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.3.3/firebase-storage.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;700&display=swap"
+    rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/glider-js@1/glider.min.css" rel="stylesheet" />
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://kit.fontawesome.com/324b71f187.js" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/glider-js@1/glider.min.js"></script>
+  <script src="./js/menuHeader.js" defer></script>
+  <script src="./js/app.js" defer type="module"></script>
+  <script src="./js/form.js" defer type="module"></script>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
+  <link rel="stylesheet" href="./css/reset.css" />
+  <link rel="stylesheet" href="./css/body.css" />
+  <link rel="stylesheet" href="./css/header.css" />
+  <link rel="stylesheet" href="./css/main.css" />
+  <link rel="stylesheet" href="./css/footer.css" />
+  <link rel="stylesheet" href="./css/recreacao/recreacao.css" />
+  <link rel="stylesheet" href="./css/voluntario/voluntario.css" />
+</head>
 
-    <script
-      src="https://kit.fontawesome.com/324b71f187.js"
-      crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/glider-js@1/glider.min.js"></script>
-    <script src="./js/menuHeader.js" defer></script>
-    <script src="./js/app.js" defer type="module"></script>
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
-    <link rel="stylesheet" href="./css/reset.css" />
-    <link rel="stylesheet" href="./css/body.css" />
-    <link rel="stylesheet" href="./css/header.css" />
-    <link rel="stylesheet" href="./css/main.css" />
-    <link rel="stylesheet" href="./css/footer.css" />
-    <link rel="stylesheet" href="./css/recreacao/recreacao.css" />
-    <link rel="stylesheet" href="./css/voluntario/voluntario.css" />
-  </head>
-
-  <body>
-    <header>
-      <div class="container_header">
-        <img
-          class="logo_culturalPath"
-          src="./img/logoCulturalPath.png"
-          alt="" />
-        <ul class="navbar">
-          <li><a href="/">Cultural Path</a></li>
-          <li><a href="/encontros" onclick="route()">Encontros</a></li>
-          <li><a href="/parceiro" onclick="route()">Seja um Parceiro</a></li>
-          <li><a href="/calendario" onclick="route()">Calendário</a></li>
-          <li><a href="/voluntario" onclick="route()">Voluntários</a></li>
-          <li><a href="/recreacao" onclick="route()">Recreação</a></li>
-        </ul>
-        <div class="button_doe" id="button_doe">DOE</div>
-        <div id="menu-icon" class="menu-icon">
-          <i class="fas fa-bars"></i>
-        </div>
+<body>
+  <header>
+    <div class="container_header">
+      <img class="logo_culturalPath" src="./img/logoCulturalPath.png" alt="" />
+      <ul class="navbar">
+        <li><a href="/">Cultural Path</a></li>
+        <li><a href="/encontros" onclick="route()">Encontros</a></li>
+        <li><a href="/parceiro" onclick="route()">Seja um Parceiro</a></li>
+        <li><a href="/calendario" onclick="route()">Calendário</a></li>
+        <li><a href="/voluntario" onclick="route()">Voluntários</a></li>
+        <li><a href="/recreacao" onclick="route()">Recreação</a></li>
+      </ul>
+      <div class="button_doe" id="button_doe">DOE</div>
+      <div id="menu-icon" class="menu-icon">
+        <i class="fas fa-bars"></i>
       </div>
-    </header>
-    <main id="root">
-      <container class="page__voluntario" id="container">
-        <div class="voluntario__title">VOLUNTÁRIOS</div>
+    </div>
+  </header>
+  <main id="root">
+    <container class="page__voluntario" id="container">
+      <div class="voluntario__title">VOLUNTÁRIOS</div>
 
-        <form action="">
-          <div class="form__content">
-            <label for="nome">NOME:</label>
-            <input
-              type="text"
-              name="nome"
-              id="nome"
-              placeholder="Digite seu nome"
-              class="input" />
-          </div>
-          <div class="form__content">
-            <label for="cpf">CPF: </label>
-            <input
-              type="text"
-              name="cpf"
-              id="cpf"
-              placeholder="Digite seu CPF"
-              class="input"
-              onkeypress="$(this).mask('000.000.000-00');" />
-          </div>
-          <div class="form__content">
-            <label for="rg">RG: </label>
-            <input
-              type="text"
-              name="rg"
-              id="rg"
-              placeholder="Digite seu RG"
-              class="input"
-              onkeypress="$(this).mask('00.000.000-0');" />
-          </div>
-          <div class="form__content">
-            <label for="email">E-MAIL:</label>
-            <input
-              type="email"
-              name="email"
-              id="email"
-              placeholder="Digite seu e-mail"
-              class="input" />
-          </div>
-          <div class="form__content">
-            <label for="telefone">TELEFONE:</label>
-            <input
-              type="tel"
-              name="telefone"
-              id="telefone"
-              placeholder="Digite seu telefone"
-              class="input"
-              onkeypress="$(this).mask('(00) 0 0000-0000');" />
-          </div>
-          <div class="form__content">
-            <label for="dt_nasc">DATA DE NASCIMENTO:</label>
-            <input
-              type="date"
-              name="dt_nasc"
-              id="dt_nasc"
-              placeholder="EX: 01/01/2001"
-              class="input" />
-          </div>
-          <div class="form__content">
-            <label for="idade">IDADE:</label>
-            <input
-              type="text"
-              name="idade"
-              id="idade"
-              placeholder="campo automático"
-              class="input"
-              disabled />
-          </div>
-          <div class="form__content">
-            <label for="civil">ESTADO CIVIL</label>
-            <select name="civil" id="civil" class="input">
-              <option value="solteiro">Solteiro(a)</option>
-              <option value="casado">Casado(a)</option>
-              <option value="viuvo">Viúvo(a)</option>
-              <option value="divorciado">Divorciado(a)</option>
-              <option value="nocivil">Não desejo informar</option>
-            </select>
-          </div>
-          <div class="form__content">
-            <label for="genero">GÊNERO</label>
-            <select name="genero" id="genero" class="input">
-              <option value="masculino">Masculino</option>
-              <option value="feminino">Feminino</option>
-              <option value="n_binario">Não-binário</option>
-              <option value="nogenero">Não desejo informar</option>
-            </select>
-          </div>
-        </form>
-        <form onsubmit="return false;">
-          <div class="form__content">
-            <label for="cep">CEP:</label>
-            <input
-              type="text"
-              name="cep"
-              id="cep"
-              placeholder="Digite seu cep"
-              class="input"
-              onkeypress="$(this).mask('00000-000');" />
-          </div>
-          <div class="form__content">
-            <label for="endereco">ENDEREÇO: </label>
-            <input
-              type="text"
-              name="endereco"
-              id="endereco"
-              placeholder="Digite seu endereco"
-              class="input disable"
-              disabled />
-          </div>
-          <div class="form__content">
-            <label for="numero">NÚMERO: </label>
-            <input
-              type="text"
-              name="numero"
-              id="numero"
-              placeholder="Digite seu numero"
-              class="input" />
-          </div>
-          <div class="form__content">
-            <label for="bairro">BAIRRO:</label>
-            <input
-              type="bairro"
-              name="bairro"
-              id="bairro"
-              placeholder="Digite seu bairro"
-              class="input disable"
-              disabled />
-          </div>
-          <div class="form__content">
-            <label for="complemento">COMPLEMENTO:</label>
-            <input
-              type="text"
-              name="complemento"
-              id="complemento"
-              placeholder="Digite seu complemento"
-              class="input" />
-          </div>
-          <div class="form__content">
-            <label for="cidade">CIDADE:</label>
-            <input
-              type="text"
-              name="cidade"
-              id="cidade"
-              placeholder="Digite sua cidade"
-              class="input disable"
-              disabled />
-          </div>
-          <div class="form__content">
-            <label for="estado">ESTADO:</label>
-            <input
-              type="text"
-              name="estado"
-              id="estado"
-              placeholder="campo automático"
-              class="input disable"
-              disabled />
-          </div>
-          <input type="file" id="imageInput" />
-          <button onclick="uploadImage()">Enviar</button>
-        </form>
-      </container>
-    </main>
-    <footer>
-      <div class="container-footer">
-        <div class="container-logo-contato">
-          <img class="logo-footer" src="./img/logoCulturalPath.png" alt="" />
-          <div class="teste">
-            <div class="fale-conosco">
-              <h5>Fale Conosco</h5>
-              <span style="color: black; font-size: 0.5rem"
-                >contao@culturalpath.org.br</span
-              >
-              <span style="color: black; font-size: 0.5rem"
-                >55 (11)942316789</span
-              >
-            </div>
-            <div class="horario-funcionamento">
-              <h5>Horário de funcionamento</h5>
-              <span style="color: black; font-size: 0.5rem"
-                >De Segunda a Sexta das 09h00 às 18h00</span
-              >
-            </div>
-          </div>
+      <form action="">
+        <div class="form__content">
+          <label for="nome">NOME:</label>
+          <input type="text" name="nome" id="nome" placeholder="Digite seu nome" class="input" />
         </div>
-
-        <div class="container-rede-social">
-          <div class="links-button">
-            <a href="#">Página inicial</a>
-            <a href="#">Seja nosso Parceiro</a>
-            <button class="button-footer" id="button-footer">Doe Agora</button>
+        <div class="form__content">
+          <label for="cpf">CPF: </label>
+          <input type="text" name="cpf" id="cpf" placeholder="Digite seu CPF" class="input"
+            onkeypress="$(this).mask('000.000.000-00');" />
+        </div>
+        <div class="form__content">
+          <label for="rg">RG: </label>
+          <input type="text" name="rg" id="rg" placeholder="Digite seu RG" class="input"
+            onkeypress="$(this).mask('00.000.000-0');" />
+        </div>
+        <div class="form__content">
+          <label for="email">E-MAIL:</label>
+          <input type="email" name="email" id="email" placeholder="Digite seu e-mail" class="input" />
+        </div>
+        <div class="form__content">
+          <label for="telefone">TELEFONE:</label>
+          <input type="tel" name="telefone" id="telefone" placeholder="Digite seu telefone" class="input"
+            onkeypress="$(this).mask('(00) 0 0000-0000');" />
+        </div>
+        <div class="form__content">
+          <label for="dt_nasc">DATA DE NASCIMENTO:</label>
+          <input type="date" name="dt_nasc" id="dt_nasc" placeholder="EX: 01/01/2001" class="input" />
+        </div>
+        <div class="form__content">
+          <label for="idade">IDADE:</label>
+          <input type="text" name="idade" id="idade" placeholder="campo automático" class="input" disabled />
+        </div>
+        <div class="form__content">
+          <label for="civil">ESTADO CIVIL</label>
+          <select name="civil" id="civil" class="input">
+            <option value="solteiro">Solteiro(a)</option>
+            <option value="casado">Casado(a)</option>
+            <option value="viuvo">Viúvo(a)</option>
+            <option value="divorciado">Divorciado(a)</option>
+            <option value="nocivil">Não desejo informar</option>
+          </select>
+        </div>
+        <div class="form__content">
+          <label for="genero">GÊNERO</label>
+          <select name="genero" id="genero" class="input">
+            <option value="masculino">Masculino</option>
+            <option value="feminino">Feminino</option>
+            <option value="n_binario">Não-binário</option>
+            <option value="nogenero">Não desejo informar</option>
+          </select>
+        </div>
+      </form>
+      <form onsubmit="return false;">
+        <div class="form__content">
+          <label for="cep">CEP:</label>
+          <input type="text" name="cep" id="cep" placeholder="Digite seu cep" class="input"
+            onkeypress="$(this).mask('00000-000');" />
+        </div>
+        <div class="form__content">
+          <label for="endereco">ENDEREÇO: </label>
+          <input type="text" name="endereco" id="endereco" placeholder="Digite seu endereco" class="input disable"
+            disabled />
+        </div>
+        <div class="form__content">
+          <label for="numero">NÚMERO: </label>
+          <input type="text" name="numero" id="numero" placeholder="Digite seu numero" class="input" />
+        </div>
+        <div class="form__content">
+          <label for="bairro">BAIRRO:</label>
+          <input type="bairro" name="bairro" id="bairro" placeholder="Digite seu bairro" class="input disable"
+            disabled />
+        </div>
+        <div class="form__content">
+          <label for="complemento">COMPLEMENTO:</label>
+          <input type="text" name="complemento" id="complemento" placeholder="Digite seu complemento" class="input" />
+        </div>
+        <div class="form__content">
+          <label for="cidade">CIDADE:</label>
+          <input type="text" name="cidade" id="cidade" placeholder="Digite sua cidade" class="input disable" disabled />
+        </div>
+        <div class="form__content">
+          <label for="estado">ESTADO:</label>
+          <input type="text" name="estado" id="estado" placeholder="campo automático" class="input disable" disabled />
+        </div>
+        <!-- <input type="file" id="imageInput" />
+        <button onclick="uploadImage()">Enviar</button> -->
+      </form>
+      <form onsubmit="return false;">
+        <div class="file-upload">
+        <label for="imageInput">Faça o Upload da foto do RG</label>
+        <svg xmlns="http://www.w3.org/2000/svg" width="87" height="55" viewBox="0 0 87 55" fill="none">
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M56.5372 40.7966C56.7987 41.0571 57.1413 41.1846 57.4839 41.1846C57.8264 41.1846 58.1688 41.0545 58.4304 40.7966C58.9533 40.2758 58.9533 39.4293 58.4304 38.9113L44.4497 24.9867C44.4497 24.9867 44.4497 24.9867 44.447 24.984L43.5019 24.0441L42.5567 24.984C42.5567 24.984 42.5567 24.984 42.554 24.9867L28.5721 38.9113C28.0505 39.4293 28.0505 40.2758 28.5721 40.7966C29.095 41.315 29.9434 41.315 30.4649 40.7966L42.1632 29.1482V52.6353C42.1632 53.3721 42.7632 53.9686 43.5019 53.9686C44.2405 53.9686 44.8393 53.3721 44.8393 52.6353V29.1482L56.5372 40.7966Z" fill="#7F63F4"/>
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M69.7804 16.4085C66.4835 7.1742 57.7818 1.0258 47.8722 1.0258C38.5353 1.0258 30.1357 6.61952 26.5026 15.0986C24.7926 14.3096 22.9309 13.9009 21.0405 13.9009C13.8385 13.9009 7.97485 19.7288 7.96207 26.9008C4.21637 29.7523 1.99926 34.1845 1.99926 38.9007C1.99926 47.2081 8.80518 53.9686 17.3944 53.9713C17.491 53.9713 17.5865 53.9736 17.6728 53.9736C17.7644 53.9736 17.8441 53.9736 17.9081 53.9686H32.0181C32.7568 53.9686 33.3568 53.3721 33.3568 52.6353C33.3568 51.9009 32.7568 51.3019 32.0181 51.3019H17.8387C17.7082 51.3096 17.5708 51.3046 17.4402 51.3019L17.167 51.2993C10.2799 51.2993 4.6766 45.7369 4.6766 38.8983C4.6766 34.8097 6.70048 30.9763 10.0903 28.6507L10.7061 28.0414L10.6395 26.9271C10.6395 21.2133 15.3065 16.5675 21.0405 16.5675C22.9637 16.5675 24.8515 17.1065 26.5 18.1222L27.9171 18.9971L28.4687 17.427C31.3541 9.21074 39.1511 3.69501 47.8776 3.69501C56.8823 3.69501 64.7656 9.4347 67.4875 17.9841L67.7385 18.7654L68.5516 18.8981C76.5289 20.1823 82.3231 26.9555 82.3231 35.0052C82.3231 43.9921 74.9655 51.3046 65.9186 51.3046H54.9843C54.2442 51.3046 53.6455 51.9036 53.6455 52.6379C53.6455 53.3747 54.2442 53.9713 54.9843 53.9713H65.9186C76.4427 53.9713 85.0005 45.4631 85.0005 35.0052C85.0005 25.9114 78.647 18.2183 69.7804 16.4085Z" fill="#7F63F4"/>
+          </svg>
+          <input type="file" id="imageInputRg" />
+          <button onclick="uploadImage('imageInputRg')">Enviar</button>
+      </div>
+      </form>
+      <form onsubmit="return false;">
+        <div class="file-upload">
+        <label for="imageInput">Faça o Upload da foto do DIPLOMA</label>
+        <svg xmlns="http://www.w3.org/2000/svg" width="87" height="55" viewBox="0 0 87 55" fill="none">
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M56.5372 40.7966C56.7987 41.0571 57.1413 41.1846 57.4839 41.1846C57.8264 41.1846 58.1688 41.0545 58.4304 40.7966C58.9533 40.2758 58.9533 39.4293 58.4304 38.9113L44.4497 24.9867C44.4497 24.9867 44.4497 24.9867 44.447 24.984L43.5019 24.0441L42.5567 24.984C42.5567 24.984 42.5567 24.984 42.554 24.9867L28.5721 38.9113C28.0505 39.4293 28.0505 40.2758 28.5721 40.7966C29.095 41.315 29.9434 41.315 30.4649 40.7966L42.1632 29.1482V52.6353C42.1632 53.3721 42.7632 53.9686 43.5019 53.9686C44.2405 53.9686 44.8393 53.3721 44.8393 52.6353V29.1482L56.5372 40.7966Z" fill="#7F63F4"/>
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M69.7804 16.4085C66.4835 7.1742 57.7818 1.0258 47.8722 1.0258C38.5353 1.0258 30.1357 6.61952 26.5026 15.0986C24.7926 14.3096 22.9309 13.9009 21.0405 13.9009C13.8385 13.9009 7.97485 19.7288 7.96207 26.9008C4.21637 29.7523 1.99926 34.1845 1.99926 38.9007C1.99926 47.2081 8.80518 53.9686 17.3944 53.9713C17.491 53.9713 17.5865 53.9736 17.6728 53.9736C17.7644 53.9736 17.8441 53.9736 17.9081 53.9686H32.0181C32.7568 53.9686 33.3568 53.3721 33.3568 52.6353C33.3568 51.9009 32.7568 51.3019 32.0181 51.3019H17.8387C17.7082 51.3096 17.5708 51.3046 17.4402 51.3019L17.167 51.2993C10.2799 51.2993 4.6766 45.7369 4.6766 38.8983C4.6766 34.8097 6.70048 30.9763 10.0903 28.6507L10.7061 28.0414L10.6395 26.9271C10.6395 21.2133 15.3065 16.5675 21.0405 16.5675C22.9637 16.5675 24.8515 17.1065 26.5 18.1222L27.9171 18.9971L28.4687 17.427C31.3541 9.21074 39.1511 3.69501 47.8776 3.69501C56.8823 3.69501 64.7656 9.4347 67.4875 17.9841L67.7385 18.7654L68.5516 18.8981C76.5289 20.1823 82.3231 26.9555 82.3231 35.0052C82.3231 43.9921 74.9655 51.3046 65.9186 51.3046H54.9843C54.2442 51.3046 53.6455 51.9036 53.6455 52.6379C53.6455 53.3747 54.2442 53.9713 54.9843 53.9713H65.9186C76.4427 53.9713 85.0005 45.4631 85.0005 35.0052C85.0005 25.9114 78.647 18.2183 69.7804 16.4085Z" fill="#7F63F4"/>
+          </svg>
+          <input type="file" id="imageInputDiploma" />
+          <button onclick="uploadImage('imageInputDiploma')">Enviar</button>
+      </div>
+      </form>
+      <form onsubmit="return false;" class="form__contruicao">
+        <label for="contribuicao__text">Descreva sua área de atuação e o que você poderia fazer para colaborar com a Cultural Path:</label>
+        <textarea id="contribuicao__text" class="msg" cols="35" rows="8"></textarea>
+      </form>
+      <form onsubmit="return false;">
+      <button class="form__submit" id="form__submit" value="aaaaa">ENVIAR CADASTRO</button>
+      <button class="form__submit" id="botao2">botão 2 teste</button>
+    </form>
+    </container>
+  </main>
+  <footer>
+    <div class="container-footer">
+      <div class="container-logo-contato">
+        <img class="logo-footer" src="./img/logoCulturalPath.png" alt="" />
+        <div class="teste">
+          <div class="fale-conosco">
+            <h5>Fale Conosco</h5>
+            <span style="color: black; font-size: 0.5rem">contao@culturalpath.org.br</span>
+            <span style="color: black; font-size: 0.5rem">55 (11)942316789</span>
           </div>
-          <div class="rede-social">
-            <h5>Nossas redes:</h5>
-            <div class="icones">
-              <i class="fab fa-instagram"></i>
-              <i class="fab fa-linkedin"></i>
-              <i class="fab fa-facebook"></i>
-            </div>
+          <div class="horario-funcionamento">
+            <h5>Horário de funcionamento</h5>
+            <span style="color: black; font-size: 0.5rem">De Segunda a Sexta das 09h00 às 18h00</span>
           </div>
         </div>
       </div>
-      <div class="barra"></div>
-    </footer>
-  </body>
-  <script>
-    // Inicialize o Firebase
-    var firebaseConfig = {
-      apiKey: 'AIzaSyDwrJfuzsQn3DNsI7QjGorZqvdFEXcQzMs',
-      authDomain: 'culturalpath-f11f9.firebaseapp.com',
-      projectId: 'culturalpath-f11f9',
-      storageBucket: 'culturalpath-f11f9.appspot.com',
-      messagingSenderId: '721761154595',
-      appId: '1:721761154595:web:ea111175b670097618e396',
-      measurementId: 'G-FFD5H0QTR2'
-    }
 
-    firebase.initializeApp(firebaseConfig)
+      <div class="container-rede-social">
+        <div class="links-button">
+          <a href="#">Página inicial</a>
+          <a href="#">Seja nosso Parceiro</a>
+          <button class="button-footer" id="button-footer">Doe Agora</button>
+        </div>
+        <div class="rede-social">
+          <h5>Nossas redes:</h5>
+          <div class="icones">
+            <i class="fab fa-instagram"></i>
+            <i class="fab fa-linkedin"></i>
+            <i class="fab fa-facebook"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="barra"></div>
+  </footer>
+</body>
+<script>
+  // Inicialize o Firebase
+  // var firebaseConfig = {
+  //   apiKey: 'AIzaSyDwrJfuzsQn3DNsI7QjGorZqvdFEXcQzMs',
+  //   authDomain: 'culturalpath-f11f9.firebaseapp.com',
+  //   projectId: 'culturalpath-f11f9',
+  //   storageBucket: 'culturalpath-f11f9.appspot.com',
+  //   messagingSenderId: '721761154595',
+  //   appId: '1:721761154595:web:ea111175b670097618e396',
+  //   measurementId: 'G-FFD5H0QTR2'
+  // }
 
-    // Função para realizar o upload da imagem
-    function uploadImage() {
-      var fileInput = document.getElementById('imageInput')
-      var file = fileInput.files[0]
-      var storageRef = firebase.storage().ref()
-      var imageRef = storageRef.child('imagens/' + file.name)
-      var uploadTask = imageRef.put(file)
+  // firebase.initializeApp(firebaseConfig)
 
-      // Acompanhar o progresso do upload
-      uploadTask.on(
-        'state_changed',
-        function (snapshot) {
-          // Acompanhar o progresso do upload (opcional)
-          var progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100
-          console.log('Progresso do Upload: ' + progress + '%')
-        },
-        function (error) {
-          // Tratar erros durante o upload
-          console.error('Erro no upload:', error)
-        },
-        function () {
-          // Upload concluído com sucesso
-          uploadTask.snapshot.ref.getDownloadURL().then(function (downloadURL) {
-            console.log('Imagem enviada com sucesso:', downloadURL)
-          })
-        }
-      )
-    }
-  </script>
+  // // Função para realizar o upload da imagem
+  // function uploadImage(upload__local) {
+  //   var fileInput = document.getElementById(`${upload__local}`)
+  //   // LEMBRAR DE PUXAR TODOS OS ARQUIVOS >> AQUI SÓ PUXA UMMMM
+  //   // var file = fileInput.files[0]
+  //   var file = fileInput.files[0]
+  //   var storageRef = firebase.storage().ref()
+  //   var imageRef = storageRef.child('imagens/' + file.name)
+  //   var uploadTask = imageRef.put(file)
+
+  //   // Acompanhar o progresso do upload
+  //   uploadTask.on(
+  //     'state_changed',
+  //     function (snapshot) {
+  //       // Acompanhar o progresso do upload (opcional)
+  //       var progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100
+  //       console.log('Progresso do Upload: ' + progress + '%')
+  //     },
+  //     function (error) {
+  //       // Tratar erros durante o upload
+  //       console.error('Erro no upload:', error)
+  //     },
+  //     function () {
+  //       // Upload concluído com sucesso
+  //       uploadTask.snapshot.ref.getDownloadURL().then(function (downloadURL) {
+  //         console.log('Imagem enviada com sucesso:', downloadURL)
+  //       })
+  //     }
+  //   )
+  // }
+</script>
+
 </html>

@@ -53,6 +53,9 @@ dt_nasc.addEventListener("blur", function () {
     let data_brasileira = dt_nasc.value;
     let data_americana = data_brasileira.split('/').reverse().join('-');
 
+    console.log(data_americana);
+    
+
     const today = new Date();
     const birthDate = new Date(data_americana);
     let age = today.getFullYear() - birthDate.getFullYear();
