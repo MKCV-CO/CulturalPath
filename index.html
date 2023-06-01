@@ -56,7 +56,7 @@
       <form action="">
         <div class="form__content">
           <label for="nome">NOME:</label>
-          <input type="text" name="nome" id="nome" placeholder="Digite seu nome" class="input" />
+          <input type="text" required name="nome" id="nome" placeholder="Digite seu nome" class="input" />
         </div>
         <div class="form__content">
           <label for="cpf">CPF: </label>
@@ -70,7 +70,7 @@
         </div>
         <div class="form__content">
           <label for="email">E-MAIL:</label>
-          <input type="email" name="email" id="email" placeholder="Digite seu e-mail" class="input" />
+          <input type="email" minlength="4" name="email" id="email" placeholder="Digite seu e-mail" class="input" />
         </div>
         <div class="form__content">
           <label for="telefone">TELEFONE:</label>
@@ -88,32 +88,32 @@
         <div class="form__content">
           <label for="civil">ESTADO CIVIL</label>
           <select name="civil" id="civil" class="input">
-            <option value="solteiro">Solteiro(a)</option>
-            <option value="casado">Casado(a)</option>
-            <option value="viuvo">Viúvo(a)</option>
-            <option value="divorciado">Divorciado(a)</option>
-            <option value="nocivil">Não desejo informar</option>
+            <option value="solteiro" id="1">Solteiro(a)</option>
+            <option value="casado" id="2">Casado(a)</option>
+            <option value="viuvo" id="3">Viúvo(a)</option>
+            <option value="divorciado" id="4">Divorciado(a)</option>
+            <option value="nocivil" id="5">Não desejo informar</option>
           </select>
         </div>
         <div class="form__content">
           <label for="genero">GÊNERO</label>
           <select name="genero" id="genero" class="input">
-            <option value="masculino">Masculino</option>
-            <option value="feminino">Feminino</option>
-            <option value="n_binario">Não-binário</option>
-            <option value="nogenero">Não desejo informar</option>
+            <option value="masculino" id="1">Masculino</option>
+            <option value="feminino" id="2">Feminino</option>
+            <option value="n_binario" id="3">Não-binário</option>
+            <option value="nogenero" id="4">Não desejo informar</option>
           </select>
         </div>
       </form>
       <form onsubmit="return false;">
         <div class="form__content">
           <label for="cep">CEP:</label>
-          <input type="text" name="cep" id="cep" placeholder="Digite seu cep" class="input"
+          <input type="text"  name="cep" id="cep" placeholder="Digite seu cep" class="input"
             onkeypress="$(this).mask('00000-000');" />
         </div>
         <div class="form__content">
-          <label for="endereco">ENDEREÇO: </label>
-          <input type="text" name="endereco" id="endereco" placeholder="Digite seu endereco" class="input disable"
+          <label for="endereco">LOGRADOURO: </label>
+          <input type="text" name="endereco" id="endereco" placeholder="Digite seu logradouro" class="input disable"
             disabled />
         </div>
         <div class="form__content">
@@ -148,7 +148,6 @@
           <path fill-rule="evenodd" clip-rule="evenodd" d="M69.7804 16.4085C66.4835 7.1742 57.7818 1.0258 47.8722 1.0258C38.5353 1.0258 30.1357 6.61952 26.5026 15.0986C24.7926 14.3096 22.9309 13.9009 21.0405 13.9009C13.8385 13.9009 7.97485 19.7288 7.96207 26.9008C4.21637 29.7523 1.99926 34.1845 1.99926 38.9007C1.99926 47.2081 8.80518 53.9686 17.3944 53.9713C17.491 53.9713 17.5865 53.9736 17.6728 53.9736C17.7644 53.9736 17.8441 53.9736 17.9081 53.9686H32.0181C32.7568 53.9686 33.3568 53.3721 33.3568 52.6353C33.3568 51.9009 32.7568 51.3019 32.0181 51.3019H17.8387C17.7082 51.3096 17.5708 51.3046 17.4402 51.3019L17.167 51.2993C10.2799 51.2993 4.6766 45.7369 4.6766 38.8983C4.6766 34.8097 6.70048 30.9763 10.0903 28.6507L10.7061 28.0414L10.6395 26.9271C10.6395 21.2133 15.3065 16.5675 21.0405 16.5675C22.9637 16.5675 24.8515 17.1065 26.5 18.1222L27.9171 18.9971L28.4687 17.427C31.3541 9.21074 39.1511 3.69501 47.8776 3.69501C56.8823 3.69501 64.7656 9.4347 67.4875 17.9841L67.7385 18.7654L68.5516 18.8981C76.5289 20.1823 82.3231 26.9555 82.3231 35.0052C82.3231 43.9921 74.9655 51.3046 65.9186 51.3046H54.9843C54.2442 51.3046 53.6455 51.9036 53.6455 52.6379C53.6455 53.3747 54.2442 53.9713 54.9843 53.9713H65.9186C76.4427 53.9713 85.0005 45.4631 85.0005 35.0052C85.0005 25.9114 78.647 18.2183 69.7804 16.4085Z" fill="#7F63F4"/>
           </svg>
           <input type="file" id="imageInputRg" />
-          <button onclick="uploadImage('imageInputRg')">Enviar</button>
       </div>
       </form>
       <form onsubmit="return false;">
@@ -159,7 +158,6 @@
           <path fill-rule="evenodd" clip-rule="evenodd" d="M69.7804 16.4085C66.4835 7.1742 57.7818 1.0258 47.8722 1.0258C38.5353 1.0258 30.1357 6.61952 26.5026 15.0986C24.7926 14.3096 22.9309 13.9009 21.0405 13.9009C13.8385 13.9009 7.97485 19.7288 7.96207 26.9008C4.21637 29.7523 1.99926 34.1845 1.99926 38.9007C1.99926 47.2081 8.80518 53.9686 17.3944 53.9713C17.491 53.9713 17.5865 53.9736 17.6728 53.9736C17.7644 53.9736 17.8441 53.9736 17.9081 53.9686H32.0181C32.7568 53.9686 33.3568 53.3721 33.3568 52.6353C33.3568 51.9009 32.7568 51.3019 32.0181 51.3019H17.8387C17.7082 51.3096 17.5708 51.3046 17.4402 51.3019L17.167 51.2993C10.2799 51.2993 4.6766 45.7369 4.6766 38.8983C4.6766 34.8097 6.70048 30.9763 10.0903 28.6507L10.7061 28.0414L10.6395 26.9271C10.6395 21.2133 15.3065 16.5675 21.0405 16.5675C22.9637 16.5675 24.8515 17.1065 26.5 18.1222L27.9171 18.9971L28.4687 17.427C31.3541 9.21074 39.1511 3.69501 47.8776 3.69501C56.8823 3.69501 64.7656 9.4347 67.4875 17.9841L67.7385 18.7654L68.5516 18.8981C76.5289 20.1823 82.3231 26.9555 82.3231 35.0052C82.3231 43.9921 74.9655 51.3046 65.9186 51.3046H54.9843C54.2442 51.3046 53.6455 51.9036 53.6455 52.6379C53.6455 53.3747 54.2442 53.9713 54.9843 53.9713H65.9186C76.4427 53.9713 85.0005 45.4631 85.0005 35.0052C85.0005 25.9114 78.647 18.2183 69.7804 16.4085Z" fill="#7F63F4"/>
           </svg>
           <input type="file" id="imageInputDiploma" />
-          <button onclick="uploadImage('imageInputDiploma')">Enviar</button>
       </div>
       </form>
       <form onsubmit="return false;" class="form__contruicao">
@@ -167,8 +165,7 @@
         <textarea id="contribuicao__text" class="msg" cols="35" rows="8"></textarea>
       </form>
       <form onsubmit="return false;">
-      <button class="form__submit" id="form__submit" value="aaaaa">ENVIAR CADASTRO</button>
-      <button class="form__submit" id="botao2">botão 2 teste</button>
+      <button class="form__submit" id="form__submit">ENVIAR CADASTRO</button>
     </form>
     </container>
   </main>

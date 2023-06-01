@@ -1,5 +1,9 @@
 'use strict'
 
+const button__submit = document.getElementById('form__submit')
+const input__rg = document.getElementById('imageInputRg')
+const input__diploma = document.getElementById('imageInputDiploma')
+
 var firebaseConfig = {
     apiKey: 'AIzaSyDwrJfuzsQn3DNsI7QjGorZqvdFEXcQzMs',
     authDomain: 'culturalpath-f11f9.firebaseapp.com',
@@ -11,6 +15,9 @@ var firebaseConfig = {
   }
 
   firebase.initializeApp(firebaseConfig)
+
+  let urlRg
+  let urlDiploma
 
   // Função para realizar o upload da imagem
   function uploadImage(upload__local) {
@@ -36,11 +43,15 @@ var firebaseConfig = {
         console.error('Erro no upload:', error)
       },
      
-      function async () {
+       function () {
         // Upload concluído com sucesso
         uploadTask.snapshot.ref.getDownloadURL().then(function (downloadURL) {
           console.log('Imagem enviada com sucesso:', downloadURL)
-          url = downloadURL
+          if(upload__local == 'imageInputRg'){
+            urlRg = downloadURL
+          }else{
+            urlDiploma = downloadURL
+          }
           
         })
       }
@@ -52,37 +63,92 @@ var firebaseConfig = {
 
   }
 
-const button__submit = document.getElementById('form__submit')
+
+
+
 
 const botao2 = document.getElementById('botao2')
 
 const handleSubmit = async () => {
-    // const telefone = document.getElementById('telefone').value
-    const fotoRg = await uploadImage('imageInputRg')
-    // const nome = document.getElementById('nome').value
-    // const cpf = document.getElementById('cpf').value
-    // const rg = document.getElementById('rg').value
-    // const email = document.getElementById('email').value
- 
+    const nome = document.getElementById('nome').value
+    const cpf = document.getElementById('cpf').value
+    const rg = document.getElementById('rg').value
+    const email = document.getElementById('email').value
+    const telefone = document.getElementById('telefone').value
+    //conversão de data
+    let data_brasileira = document.getElementById('dt_nasc').value
+    const data_nascimento = data_brasileira.split('/').reverse().join('-');    
+    let fotoRg = urlRg
+    let fotoDiploma = urlDiploma
+    let contribuicao = document.getElementById('contribuicao__text').value
+    const genero = document.getElementById('genero').selectedIndex + 1
+    const estado_civil = document.getElementById('civil').selectedIndex + 1
+    const logradouro = document.getElementById('endereco').value
+    const cep = document.getElementById('cep').value
+    const complemento = document.getElementById('complemento').value
+    const numero = document.getElementById('numero').value
+    const bairro = document.getElementById('bairro').value
+    const cidade = document.getElementById('cidade').value
+    const estado = document.getElementById('estado').value
+
 
     
+    let jsonDadosPessoais = {
+      nome: nome,
+      cpf: cpf,
+      rg: rg,
+      email: email,
+      telefone: telefone,
+      data_nascimento: data_nascimento,
+      foto_rg: fotoRg,
+      foto_diploma: fotoDiploma,
+      contribuicao: contribuicao,
+      id_genero: genero,
+      id_estado_civil: estado_civil
+    }
+    let jsonDadosEndereco = {
+      logradouro: logradouro ,
+      cep: cep,
+      numero: numero,
+      complemento: complemento,
+      bairro: bairro,
+      cidade: cidade,
+      estado: estado
+    }
+    let jsonVoluntario = {voluntario: jsonDadosPessoais, endereco: jsonDadosEndereco}
+    console.log(jsonVoluntario);
     
-
-     console.log('aaaaa ' + fotoRg);
-    
-
-    console.log(button__submit.value);
-    
-    
-    let jsonVoluntario = {}
-    let jsonDadosPessoais = {}
-    let jsonDadosEndereco = {}
-
-
+    postVoluntarioApi(jsonVoluntario)
 
 }
 
+const postVoluntarioApi = async (dadosBody) => {
+
+    const dataBody = dadosBody
+ 
+    const initPost = {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(dataBody)
+    }
+
+    const url = 'http://localhost:8080/v1/cultural-path/voluntario';
+    const response = await fetch(url, initPost);
+    const voluntario = await response.json()
+    alert('Voluntário adicionada no sistema!');
+}
 
 
+const handleRg = () => {
+  uploadImage('imageInputRg')
+}
 
+const handleDiploma = () => {
+  uploadImage('imageInputDiploma')
+}
+
+input__rg.addEventListener('change', handleRg)
+input__diploma.addEventListener('change', handleDiploma)
 button__submit.addEventListener('click', handleSubmit)

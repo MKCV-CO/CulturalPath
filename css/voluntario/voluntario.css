@@ -85,8 +85,9 @@ form {
   text-align: start;
   padding-left: 16px;
   padding-top: 16px;
-  text-transform: capitalize;
+  text-transform: none;
 }
+
 
 .contribuicao__text{
   font-size: 1rem;
