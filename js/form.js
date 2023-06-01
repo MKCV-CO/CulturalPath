@@ -3,6 +3,8 @@
 const button__submit = document.getElementById('form__submit')
 const input__rg = document.getElementById('imageInputRg')
 const input__diploma = document.getElementById('imageInputDiploma')
+const nome2 = document.getElementById('nome')
+
 
 var firebaseConfig = {
     apiKey: 'AIzaSyDwrJfuzsQn3DNsI7QjGorZqvdFEXcQzMs',
@@ -64,32 +66,33 @@ var firebaseConfig = {
   }
 
 
+const validarCadastro = () => {
+
+}
 
 
 
-const botao2 = document.getElementById('botao2')
 
 const handleSubmit = async () => {
-    const nome = document.getElementById('nome').value
-    const cpf = document.getElementById('cpf').value
-    const rg = document.getElementById('rg').value
-    const email = document.getElementById('email').value
-    const telefone = document.getElementById('telefone').value
-    //conversão de data
-    let data_brasileira = document.getElementById('dt_nasc').value
-    const data_nascimento = data_brasileira.split('/').reverse().join('-');    
-    let fotoRg = urlRg
-    let fotoDiploma = urlDiploma
-    let contribuicao = document.getElementById('contribuicao__text').value
-    const genero = document.getElementById('genero').selectedIndex + 1
-    const estado_civil = document.getElementById('civil').selectedIndex + 1
-    const logradouro = document.getElementById('endereco').value
-    const cep = document.getElementById('cep').value
-    const complemento = document.getElementById('complemento').value
-    const numero = document.getElementById('numero').value
-    const bairro = document.getElementById('bairro').value
-    const cidade = document.getElementById('cidade').value
-    const estado = document.getElementById('estado').value
+  const nome = document.getElementById('nome').value
+  const cpf = document.getElementById('cpf').value
+  const rg = document.getElementById('rg').value
+  const email = document.getElementById('email').value
+  const telefone = document.getElementById('telefone').value
+  let data_brasileira = document.getElementById('dt_nasc').value
+  const data_nascimento = data_brasileira.split('/').reverse().join('-');    
+  let fotoRg = urlRg
+  let fotoDiploma = urlDiploma
+  let contribuicao = document.getElementById('contribuicao__text').value
+  const genero = document.getElementById('genero').selectedIndex + 1
+  const estado_civil = document.getElementById('civil').selectedIndex + 1
+  const logradouro = document.getElementById('endereco').value
+  const cep = document.getElementById('cep').value
+  const complemento = document.getElementById('complemento').value
+  const numero = document.getElementById('numero').value
+  const bairro = document.getElementById('bairro').value
+  const cidade = document.getElementById('cidade').value
+  const estado = document.getElementById('estado').value
 
 
     
@@ -149,6 +152,16 @@ const handleDiploma = () => {
   uploadImage('imageInputDiploma')
 }
 
+
+const testenome2 = () => {
+  const span__erro = document.getElementById("nome__erro")
+  nome2.classList.remove('invalid')
+  span__erro.textContent = ''
+
+}
+
+
+nome2.addEventListener('change', testenome2)
 input__rg.addEventListener('change', handleRg)
 input__diploma.addEventListener('change', handleDiploma)
 button__submit.addEventListener('click', handleSubmit)

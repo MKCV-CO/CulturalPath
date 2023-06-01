@@ -108,6 +108,19 @@ form {
   background-color: #00779b;
 }
 
+.invalid{
+  border-color: red;
+}
+
+.color {
+  color: red;
+}
+
+.erro{
+  font-size: .75rem;
+  color: red;
+}
+
 @media (max-width: 768px) {
   form {
     width: 100vw;

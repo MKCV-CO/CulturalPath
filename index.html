@@ -56,7 +56,8 @@
       <form action="">
         <div class="form__content">
           <label for="nome">NOME:</label>
-          <input type="text" required name="nome" id="nome" placeholder="Digite seu nome" class="input" />
+          <input type="text" required name="nome" id="nome" placeholder="Digite seu nome" class="input invalid" />
+          <span id="nome__erro" class="erro">* Preencha o campo nome</span>
         </div>
         <div class="form__content">
           <label for="cpf">CPF: </label>
@@ -206,6 +207,13 @@
   </footer>
 </body>
 <script>
+
+const testenome2 = () => {
+  const span__erro = document.getElementById("nome__erro")
+  nome2.classList.remove('invalid')
+  span__erro.textContent = ''
+
+}
   // Inicialize o Firebase
   // var firebaseConfig = {
   //   apiKey: 'AIzaSyDwrJfuzsQn3DNsI7QjGorZqvdFEXcQzMs',
