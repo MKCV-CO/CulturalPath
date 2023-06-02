@@ -15,7 +15,11 @@ const routes = {
   "/calendario": "/pages/calendario.html",
   "/voluntario": "/pages/voluntario.html",
   "/recreacao": "/pages/recreacao.html",
+  "/quiz": "/pages/quiz.html",
+  "/quiz-perguntas":"/pages/quiz-perguntas.html"
 };
+
+let valorDoInput
 
 const route = async () => {
   window.event.preventDefault();
@@ -45,8 +49,18 @@ const route = async () => {
     alterColor('#009d78')
     loadContainer()
     createCarousel()
+    
+  }else if (path == '/quiz'){
+    alterColor('#79132a')
+    const inputDoQuiz = document.getElementById('input-nome')
+    const buttonDoQuiz = document.getElementById('button-inicio')
+    buttonDoQuiz.addEventListener('click', function(){
+      valorDoInput = inputDoQuiz.value
+    })
   }
 }
+
+  
 
 
 
