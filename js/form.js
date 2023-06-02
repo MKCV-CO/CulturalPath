@@ -1,9 +1,22 @@
 'use strict'
+const path = window.location.pathname;
 
-const button__submit = document.getElementById('form__submit')
-const input__rg = document.getElementById('imageInputRg')
-const input__diploma = document.getElementById('imageInputDiploma')
-const nome2 = document.getElementById('nome')
+console.log(path);
+
+let button__submit
+let input__rg
+let input__diploma
+
+export const carregarForm = () => {
+  getElementsForm()
+  eventsForms()
+}
+
+const getElementsForm = () => {
+  button__submit = document.getElementById('form__submit')
+  input__rg = document.getElementById('imageInputRg')
+  input__diploma = document.getElementById('imageInputDiploma')
+}
 
 
 var firebaseConfig = {
@@ -65,10 +78,6 @@ var firebaseConfig = {
 
   }
 
-
-const validarCadastro = () => {
-
-}
 
 
 
@@ -153,15 +162,9 @@ const handleDiploma = () => {
 }
 
 
-const testenome2 = () => {
-  const span__erro = document.getElementById("nome__erro")
-  nome2.classList.remove('invalid')
-  span__erro.textContent = ''
+const eventsForms = () => {
 
-}
-
-
-nome2.addEventListener('change', testenome2)
 input__rg.addEventListener('change', handleRg)
 input__diploma.addEventListener('change', handleDiploma)
 button__submit.addEventListener('click', handleSubmit)
+}

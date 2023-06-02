@@ -3,6 +3,8 @@
 
 import { alterColor } from './style.js';
 import { createCarousel } from './style.js';
+import { formatDate } from './style.js';
+import { carregarForm } from './form.js';
 
 
 const routes = {
@@ -31,6 +33,8 @@ const route = async () => {
     alterColor('#085871')
   } else if (path == "/voluntario") {
     alterColor('#7675DC')
+    formatDate()
+    carregarForm()
   } else if (path == "/calendario") {
     alterColor('#79132A')
   } else if (path == "/parceiro") {
@@ -38,7 +42,6 @@ const route = async () => {
   } else if (path == "/recreacao") {
     alterColor('#009d78')
     createCarousel()
-
   }
 }
 

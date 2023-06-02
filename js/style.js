@@ -43,30 +43,37 @@ export const createCarousel = () => {
     })
 }
 
-// GETELEMENT DAS VARIAVEIS DATA DE NASCIMENTO E IDADE
-var dt_nasc = document.querySelector("#dt_nasc");
-var idade = document.querySelector("#idade");
-
-// PREENCHIMENTO AUTOMÁTICO DO CAMPO IDADE
-dt_nasc.addEventListener("blur", function () {
-
-    let data_brasileira = dt_nasc.value;
-    let data_americana = data_brasileira.split('/').reverse().join('-');
-
-    console.log(data_americana);
+export const formatDate = () => {
+    var dt_nasc = document.querySelector("#dt_nasc");
+    var idade = document.querySelector("#idade");
     
+    // PREENCHIMENTO AUTOMÁTICO DO CAMPO IDADE
+    dt_nasc.addEventListener("blur", function () {
+    
+        let data_brasileira = dt_nasc.value;
+        let data_americana = data_brasileira.split('/').reverse().join('-');
+    
+        console.log(data_americana);
+        
+    
+        const today = new Date();
+        const birthDate = new Date(data_americana);
+        let age = today.getFullYear() - birthDate.getFullYear();
+        const m = today.getMonth() - birthDate.getMonth();
+    
+        if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
+            age--;
+        }
+    
+        idade.value = age;
+    })
 
-    const today = new Date();
-    const birthDate = new Date(data_americana);
-    let age = today.getFullYear() - birthDate.getFullYear();
-    const m = today.getMonth() - birthDate.getMonth();
+    document.getElementById('cep').addEventListener('blur', preencherDados)
 
-    if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
-        age--;
-    }
+}
 
-    idade.value = age;
-})
+// GETELEMENT DAS VARIAVEIS DATA DE NASCIMENTO E IDADE
+
 
 // PESQUISAR O CEP ATRAVÉS DA API VIACEP
 const pesquisarCep = async (cep) => {
@@ -98,4 +105,3 @@ const preencherDados = async () => {
 }
 
 // EVENTO DE BLUR PARA CHAMAR A FUNÇÃO PREENCHER DADOS
-document.getElementById('cep').addEventListener('blur', preencherDados)
