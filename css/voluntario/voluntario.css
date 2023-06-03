@@ -57,27 +57,25 @@ form {
   flex-direction: column;
 }
 
-.file-upload{
+.file-upload {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   gap: 12px;
-
 }
 
-.form__contruicao{
+.form__contruicao {
   display: flex;
   justify-content: start;
   align-items: start;
   flex-direction: column;
-  
 }
 
-#contribuicao__text{
+#contribuicao__text {
   width: 100%;
   height: 300px;
-  border: .5px solid gray;
+  border: 0.5px solid gray;
   border-radius: 16px;
   display: flex;
   align-items: flex-start;
@@ -88,27 +86,26 @@ form {
   text-transform: none;
 }
 
-
-.contribuicao__text{
+.contribuicao__text {
   font-size: 1rem;
 }
 
-.form__submit{
-    border: none;
-    border-radius: 100px;
-    height: 40px;
-    width: 200px;
-    background-color: #0199C8;
-    font-weight: 700;
-    color: white;
-    transition: all .5s;
+.form__submit {
+  border: none;
+  border-radius: 100px;
+  height: 40px;
+  width: 200px;
+  background-color: #7675dc;
+  font-weight: 700;
+  color: white;
+  transition: all 0.5s;
 }
 
-.form__submit:hover{
+.form__submit:hover {
   background-color: #00779b;
 }
 
-.invalid{
+.invalid {
   border-color: red;
 }
 
@@ -116,8 +113,8 @@ form {
   color: red;
 }
 
-.erro{
-  font-size: .75rem;
+.erro {
+  font-size: 0.75rem;
   color: red;
 }
 

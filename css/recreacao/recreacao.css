@@ -17,18 +17,43 @@
 }
 
 .video {
-  width: 400px;
-  height: 100%;
+  height: fit-content;
+  width: 100vw;
 }
 
-.glider-dot.active{
+.video > iframe {
+  width: 33vw;
+  height: 300px;
+}
+
+.glider-dot.active {
   background-color: #009d78;
 }
 
+.prev,
+.next {
+  background-color: #009d78;
+  color: #fff;
+  outline: none;
+  border: none;
+  width: 100px;
+  height: 30px;
+  border-radius: 24px;
+}
+
+.carrousel {
+  display: flex;
+  flex-direction: column;
+  height: 400px;
+  align-items: center;
+  gap: 16px;
+}
+
 .video__container {
+  display: flex;
   width: 100%;
-  height: 200px;
-  gap: 32px;
+  height: 280px;
+  align-items: center;
 }
 
 .recreacao__videos {
@@ -58,10 +83,9 @@
 }
 
 @media (max-width: 768px) {
-
-  .video{
-    width: 100%;
-    height: 300px;
+  .video > iframe {
+    width: 100vw !important;
+    height: fit-content;
   }
   .cultural__container {
     flex-direction: column;

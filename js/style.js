@@ -16,27 +16,31 @@ menu.onclick = () => {
 
 // CRIAÇÃO DO OBJETO CARROSSEL
 export const createCarousel = () => {
-    const carrousel = document.getElementById('video__container')
+    const carousel = document.getElementById('video__container')
 
-    new Glider(carrousel, {
+    new Glider(carousel, {
         slidesToShow: 1,
         slidesToScroll: 1,
         draggable: true,
-        dots: '.dots',
-        scrollLock: true,
+        // dots: '.dots',
+        arrows: {
+            prev: '.prev',
+            next: '.next'
+        },
+        // scrollLock: true,
         responsive: [
             {
                 breakpoint: 600,
                 settings: {
-                    slidesToShow: 2,
-                    slidesToScroll: 2
+                    slidesToShow: 1,
+                    slidesToScroll: 1
                 }
             },
             {
                 breakpoint: 900,
                 settings: {
-                    slidesToShow: 3,
-                    slidesToScroll: 3
+                    slidesToShow: 1,
+                    slidesToScroll: 1
                 }
             }
         ]
@@ -46,25 +50,25 @@ export const createCarousel = () => {
 export const formatDate = () => {
     var dt_nasc = document.querySelector("#dt_nasc");
     var idade = document.querySelector("#idade");
-    
+
     // PREENCHIMENTO AUTOMÁTICO DO CAMPO IDADE
     dt_nasc.addEventListener("blur", function () {
-    
+
         let data_brasileira = dt_nasc.value;
         let data_americana = data_brasileira.split('/').reverse().join('-');
-    
+
         console.log(data_americana);
-        
-    
+
+
         const today = new Date();
         const birthDate = new Date(data_americana);
         let age = today.getFullYear() - birthDate.getFullYear();
         const m = today.getMonth() - birthDate.getMonth();
-    
+
         if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
             age--;
         }
-    
+
         idade.value = age;
     })
 
