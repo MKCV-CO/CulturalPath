@@ -6,6 +6,9 @@ import { createCarousel } from './style.js';
 import { formatDate } from './style.js';
 import { carregarForm } from './form.js';
 import { loadContainer } from './app.js';
+import { styleButtonRestart } from './quiz-perguntas.js/quiz.js';
+import { loadQuestion } from './quiz-perguntas.js/quiz.js';
+import { importQuerySelector } from './quiz-perguntas.js/quiz.js';
 
 
 const routes = {
@@ -16,7 +19,7 @@ const routes = {
   "/voluntario": "/pages/voluntario.html",
   "/recreacao": "/pages/recreacao.html",
   "/quiz": "/pages/quiz.html",
-  "/quiz-perguntas":"/pages/quiz-perguntas.html"
+  "/quiz-perguntas": "/pages/quiz-perguntas.html"
 };
 
 let valorDoInput
@@ -34,7 +37,7 @@ const route = async () => {
 
   if (path == "/" || path == "/index.html") {
     alterColor('#0D9ECC')
-    
+
   } else if (path == "/encontros") {
     alterColor('#085871')
   } else if (path == "/voluntario") {
@@ -49,18 +52,24 @@ const route = async () => {
     alterColor('#009d78')
     loadContainer()
     createCarousel()
-    
-  }else if (path == '/quiz'){
+
+  } else if (path == '/quiz') {
     alterColor('#79132a')
     const inputDoQuiz = document.getElementById('input-nome')
     const buttonDoQuiz = document.getElementById('button-inicio')
-    buttonDoQuiz.addEventListener('click', function(){
+    buttonDoQuiz.addEventListener('click', function () {
       valorDoInput = inputDoQuiz.value
     })
+  } else if (path == '/quiz-perguntas') {
+    const btnRestart = document.querySelector(".finish button")
+    importQuerySelector()
+    btnRestart.addEventListener('click', styleButtonRestart)
+    console.log('estou no quiz');
+    loadQuestion()
   }
 }
 
-  
+
 
 
 

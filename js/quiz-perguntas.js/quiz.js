@@ -1,12 +1,22 @@
 "use strict"
 
-const question = document.querySelector(".question")
-const answers = document.querySelector(".answers")
-const spanQtnd = document.querySelector(".spnQtd")
-const textFinish = document.querySelector(".finish span")
-const content = document.querySelector(".content")
-const contentFinish = document.querySelector(".finish")
-const btnRestart = document.querySelector(".finish button")
+let question
+let answers
+let spanQtnd
+let textFinish
+let content
+let contentFinish
+
+
+export const importQuerySelector = () => {
+    question = document.querySelector(".question")
+    answers = document.querySelector(".answers")
+    spanQtnd = document.querySelector(".spnQtd")
+    textFinish = document.querySelector(".finish span")
+    content = document.querySelector(".content")
+    contentFinish = document.querySelector(".finish")
+}
+
 
 import questions from "./questions.js"
 
@@ -15,27 +25,30 @@ let questionCorrect = 0
 
 
 
-btnRestart.onclick = () => {
+
+export const styleButtonRestart = () => {
     content.style.display = "flex"
     contentFinish.style.display = "flex"
     contentFinish.style.flexDirection = "row"
     contentFinish.style.gap = "5%"
     textFinish.style.display = "none"
-    currentIndex = 0 
+    currentIndex = 0
     questionCorrect = 0;
     loadQuestion()
 }
 
-function nextQuestion(e){
-    if(e.target.getAttribute("data-correct") == "true"){
+
+
+function nextQuestion(e) {
+    if (e.target.getAttribute("data-correct") == "true") {
         questionCorrect++
     }
-    if(currentIndex < questions.length - 1){
+    if (currentIndex < questions.length - 1) {
         currentIndex++
         loadQuestion()
-        
+
     }
-    else{
+    else {
         finish()
     }
 }
@@ -62,7 +75,7 @@ function finish() {
 
 
 
-export function loadQuestion(){
+export function loadQuestion() {
     spanQtnd.innerHTML = `${currentIndex + 1}/${questions.length}`
     let item = questions[currentIndex];
     answers.innerHTML = ""
@@ -79,8 +92,8 @@ export function loadQuestion(){
 
     })
 
-    document.querySelectorAll(".answer").forEach((item) =>{
-        item.addEventListener("click",nextQuestion)
+    document.querySelectorAll(".answer").forEach((item) => {
+        item.addEventListener("click", nextQuestion)
     })
 }
 
