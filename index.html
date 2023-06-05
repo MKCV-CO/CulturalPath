@@ -1,188 +1,132 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Home</title>
-    <script src="https://www.gstatic.com/firebasejs/8.3.3/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.3.3/firebase-storage.js"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;700&display=swap"
-      rel="stylesheet" />
-    <link
-      href="https://cdn.jsdelivr.net/npm/glider-js@1/glider.min.css"
-      rel="stylesheet" />
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script
-      src="https://kit.fontawesome.com/324b71f187.js"
-      crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/glider-js@1/glider.min.js"></script>
-    <script src="./js/menuHeader.js" defer></script>
-    <script src="./js/app.js" defer type="module"></script>
-    <script src="./js/form.js" defer type="module"></script>
-    <script src="./js/quiz-perguntas.js/quiz.js" defer type="module"></script>
-    <script src="./js/calendario.js" defer ></script>
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
-    <link rel="stylesheet" href="./css/reset.css" />
-    <link rel="stylesheet" href="./css/body.css" />
-    <link rel="stylesheet" href="./css/header.css" />
-    <link rel="stylesheet" href="./css/main.css" />
-    <link rel="stylesheet" href="./css/footer.css" />
-    <link rel="stylesheet" href="./css/recreacao/recreacao.css" />
-    <link rel="stylesheet" href="./css/voluntario/voluntario.css" />
-    <link rel="stylesheet" href="./css/parceiro/parceiro.css" />
-    <link rel="stylesheet" href="./css/quiz/quiz.css" />
-    <link rel="stylesheet" href="./css/calendario/calendario.css" />
-    <link rel="stylesheet" href="./css/quiz/quiz-perguntas.css" /><meta
-    name="description"
-    content="Stay organized with our user-friendly Calendar featuring events, reminders, and a customizable interface. Built with HTML, CSS, and JavaScript. Start scheduling today!"
-  />
-  <meta
-    name="keywords"
-    content="calendar, events, reminders, javascript, html, css, open source coding"
-  />
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Home</title>
+  <!-- IMPORT FIREBASE -->
+  <script src="https://www.gstatic.com/firebasejs/8.3.3/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.3.3/firebase-storage.js"></script>
+  <!-- IMPORT FIREBASE -->
+
+  <!-- IMPORT FONT -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;700&display=swap"
+    rel="stylesheet" />
+  <!-- IMPORT FONT -->
+
+  <!-- IMPORT GLIDER > SLIDER -->
+  <link href="https://cdn.jsdelivr.net/npm/glider-js@1/glider.min.css" rel="stylesheet" />
+  <!-- IMPORT GLIDER > SLIDER -->
+
+  <!-- IMPORT JQUERY VALIDAÇÃO FORM -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <!-- IMPORT JQUERY VALIDAÇÃO FORM -->
+
+  <!-- IMPORT FONTAWESOME -->
+  <script src="https://kit.fontawesome.com/324b71f187.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/glider-js@1/glider.min.js"></script>
+  <!-- IMPORT FONTAWESOME -->
+
+  <!-- IMPORT JS -->
+  <script src="./js/menuHeader.js" defer></script>
+  <script src="./js/app.js" defer type="module"></script>
+  <script src="./js/form-voluntario.js" defer type="module"></script>
+  <script src="./js/form-parceiro.js" defer type="module"></script>
+  <script src="./js/quiz-perguntas.js/quiz.js" defer type="module"></script>
+  <!-- IMPORT JS -->
+
+  <!-- LINKS CSS -->
+  <link rel="stylesheet" href="./css/reset.css" />
+  <link rel="stylesheet" href="./css/body.css" />
+  <link rel="stylesheet" href="./css/header.css" />
+  <link rel="stylesheet" href="./css/main.css" />
+  <link rel="stylesheet" href="./css/footer.css" />
+  <link rel="stylesheet" href="./css/recreacao/recreacao.css" />
+  <link rel="stylesheet" href="./css/voluntario/voluntario.css" />
+  <link rel="stylesheet" href="./css/parceiro/parceiro.css" />
+  <link rel="stylesheet" href="./css/quiz/quiz.css" />
+  <link rel="stylesheet" href="./css/calendario/calendario.css" />
+  <link rel="stylesheet" href="./css/quiz/quiz-perguntas.css" />
+  <!-- LINKS CSS -->
+
+  <!-- CLOUDFARE -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
     integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
-    crossorigin="anonymous"
-    referrerpolicy="no-referrer"
-  />
-  </head>
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
+  <!-- CLOUDFARE -->
 
-  <body>
-    <header>
-      <div class="container_header">
-        <img
-          class="logo_culturalPath"
-          src="./img/logoCulturalPath.png"
-          alt="" />
-        <ul class="navbar">
-          <li><a href="/">Cultural Path</a></li>
-          <li><a href="/encontros" onclick="route()">Encontros</a></li>
-          <li><a href="/parceiro" onclick="route()">Seja um Parceiro</a></li>
-          <li><a href="/calendario" onclick="route()">Calendário</a></li>
-          <li><a href="/voluntario" onclick="route()">Voluntários</a></li>
-          <li><a href="/recreacao" onclick="route()">Recreação</a></li>
-          <!-- <li><a href="/quiz" onclick="route()">Quiz</a></li> -->
-        </ul>
-        <div class="button_doe" id="button_doe">DOE</div>
-        <div id="menu-icon" class="menu-icon">
-          <i class="fas fa-bars"></i>
-        </div>
-      </div>
-    </header>
-    <main id="root"><section class="home">
-      <div class="containerHome">
-          <h1 class="title_home">
-              Cultural
-              <span style="color: #009d78;">P</span><span style="color:#0D9ECC;">a</span><span
-                  style="color: #E99922;">t</span><span style="color: #79132a;">h</span>, mudando vidas.
-          </h1>
-          <p class="text_home">
-              Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-              Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
-          </p>
-          <button class="button_home">
-              venha fazer parte
-          </button>
-      </div>
-  </section>
-  <section class="seja_voluntario">
-      <div class="container-seja-voluntario">
-          <div class="container_text">
-              <h1 class="title_voluntario">
-                  The standard Lorem Ipsum passage, used since the 1500s
-              </h1>
-              <p class="text_voluntario">
-                  Você pode ajudar de várias formas
-                  além da doação em dinheiro. Junte-se a nós e transforme vidas.
-              </p>
-              <button class="button_seja_voluntario">
-                  quero ajudar
-              </button>
-          </div>
-      </div>
-      </div>
-  </section>
-  <section class="empresas">
-      <div class="container_empresas">
-          <h1 class="title_home">
-              Venha ser nosso parceiro.
-          </h1>
-          <p class="text_empresas">
-              Você pode ajudar de várias formas além da doação em dinheiro.
-              Junte-se a nós e transforme vidas.
-          </p>
-          <button class="button_empresa">
-              quero ajudar
-          </button>
-  
-      </div>
-  
-  </section>
-  
-  <section class="calendario">
-      <div class="container-empresa">
-          <div class="container_text">
-              <h1 class="title_empresa">
-                  CALENDÁRIO 2023
-              </h1>
-              <p class="text_voluntario">
-                  Você pode ajudar de várias formas
-                  além da doação em dinheiro. Junte-se a nós e transforme vidas.
-              </p>
-              <button class="button_calendario">
-                  quero ajudar
-              </button>
-          </div>
-      </div>
-  </section></main>
-    <footer>
-      <div class="container-footer">
-        <div class="container-logo-contato">
-          <img class="logo-footer" src="./img/logoCulturalPath.png" alt="" />
-          <div class="teste">
-            <div class="fale-conosco">
-              <h5>Fale Conosco</h5>
-              <span style="color: black; font-size: 0.5rem"
-                >contao@culturalpath.org.br</span
-              >
-              <span style="color: black; font-size: 0.5rem"
-                >55 (11)942316789</span
-              >
-            </div>
-            <div class="horario-funcionamento">
-              <h5>Horário de funcionamento</h5>
-              <span style="color: black; font-size: 0.5rem"
-                >De Segunda a Sexta das 09h00 às 18h00</span
-              >
-            </div>
-          </div>
-        </div>
+  <!-- META CALENDARIO -->
+  <meta name="description"
+    content="Stay organized with our user-friendly Calendar featuring events, reminders, and a customizable interface. Built with HTML, CSS, and JavaScript. Start scheduling today!" />
+  <meta name="keywords" content="calendar, events, reminders, javascript, html, css, open source coding" />
+  <!-- META CALENDARIO -->
 
-        <div class="container-rede-social">
-          <div class="links-button">
-            <a href="#">Página inicial</a>
-            <a href="#">Seja nosso Parceiro</a>
-            <button class="button-footer" id="button-footer">Doe Agora</button>
+</head>
+<body>
+  <header>
+    <div class="container_header">
+      <img class="logo_culturalPath" src="./img/logoCulturalPath.png" alt="" />
+      <ul class="navbar">
+        <li><a href="/">Cultural Path</a></li>
+        <li><a href="/encontros" onclick="route()">Encontros</a></li>
+        <li><a href="/parceiro" onclick="route()">Seja um Parceiro</a></li>
+        <li><a href="/calendario" onclick="route()">Calendário</a></li>
+        <li><a href="/voluntario" onclick="route()">Voluntários</a></li>
+        <li><a href="/recreacao" onclick="route()">Recreação</a></li>
+        <!-- <li><a href="/quiz" onclick="route()">Quiz</a></li> -->
+      </ul>
+      <div class="button_doe" id="button_doe">DOE</div>
+      <div id="menu-icon" class="menu-icon">
+        <i class="fas fa-bars"></i>
+      </div>
+    </div>
+  </header>
+  <main id="root">
+
+
+  </main>
+  <footer>
+    <div class="container-footer">
+      <div class="container-logo-contato">
+        <img class="logo-footer" src="./img/logoCulturalPath.png" alt="" />
+        <div class="teste">
+          <div class="fale-conosco">
+            <h5>Fale Conosco</h5>
+            <span style="color: black; font-size: 0.5rem">contao@culturalpath.org.br</span>
+            <span style="color: black; font-size: 0.5rem">55 (11)942316789</span>
           </div>
-          <div class="rede-social">
-            <h5>Nossas redes:</h5>
-            <div class="icones">
-              <i class="fab fa-instagram"></i>
-              <i class="fab fa-linkedin"></i>
-              <i class="fab fa-facebook"></i>
-            </div>
+          <div class="horario-funcionamento">
+            <h5>Horário de funcionamento</h5>
+            <span style="color: black; font-size: 0.5rem">De Segunda a Sexta das 09h00 às 18h00</span>
           </div>
         </div>
       </div>
-      <div class="barra"></div>
-    </footer>
-  </body>
+
+      <div class="container-rede-social">
+        <div class="links-button">
+          <a href="#">Página inicial</a>
+          <a href="#">Seja nosso Parceiro</a>
+          <button class="button-footer" id="button-footer">Doe Agora</button>
+        </div>
+        <div class="rede-social">
+          <h5>Nossas redes:</h5>
+          <div class="icones">
+            <i class="fab fa-instagram"></i>
+            <i class="fab fa-linkedin"></i>
+            <i class="fab fa-facebook"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="barra"></div>
+  </footer>
+</body>
+
 </html>

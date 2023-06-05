@@ -4,8 +4,9 @@
 import { alterColor } from './style.js';
 import { createCarousel } from './style.js';
 import { formatDate } from './style.js';
-import { carregarForm } from './form.js';
+import { carregarForm } from './form-voluntario.js';
 import { loadContainer } from './app.js';
+import { carregarFormParceiro } from './form-parceiro.js';
 import { styleButtonRestart } from './quiz-perguntas.js/quiz.js';
 import { loadQuestion } from './quiz-perguntas.js/quiz.js';
 import { importQuerySelector } from './quiz-perguntas.js/quiz.js';
@@ -47,6 +48,7 @@ const route = async () => {
   } else if (path == "/calendario") {
     alterColor('#79132A')
   } else if (path == "/parceiro") {
+    carregarFormParceiro()
     alterColor('#E99922')
   } else if (path == "/recreacao") {
     alterColor('#009d78')

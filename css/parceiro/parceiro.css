@@ -33,8 +33,9 @@
 .motivo__container {
   display: flex;
   width: 100%;
+  max-width: 1500px;
   height: fit-content;
-  justify-content: center;
+  justify-content: space-between;
   gap: 32px;
   padding-top: 32px;
   padding-bottom: 32px;
@@ -45,7 +46,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 50%;
+  width: 70%;
   text-align: justify;
 }
 
@@ -81,6 +82,7 @@
 .valores__container {
   height: 100%;
   width: 100%;
+  max-width: 1800px;
   place-items: center;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
@@ -185,6 +187,8 @@ select {
   .motivo__container {
     flex-direction: column;
     align-items: center;
+    justify-content: center;
+    width: 100%;
   }
   .motivo__text {
     width: 80%;
@@ -196,6 +200,7 @@ select {
   .parceiro__formulario__content {
     flex-direction: column-reverse;
     width: 100%;
+    max-width: 1500px;
   }
 
   .form__parceiro {

@@ -27,7 +27,7 @@ export const createCarousel = () => {
             prev: '.prev',
             next: '.next'
         },
-        // scrollLock: true,
+        scrollLock: true,
         responsive: [
             {
                 breakpoint: 600,
