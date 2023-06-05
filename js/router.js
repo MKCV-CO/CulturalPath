@@ -20,7 +20,8 @@ const routes = {
   "/voluntario": "/pages/voluntario.html",
   "/recreacao": "/pages/recreacao.html",
   "/quiz": "/pages/quiz.html",
-  "/quiz-perguntas": "/pages/quiz-perguntas.html"
+  "/quiz-perguntas": "/pages/quiz-perguntas.html",
+  "/doe": "/pages/doe.html"
 };
 
 let valorDoInput
@@ -68,6 +69,9 @@ const route = async () => {
     btnRestart.addEventListener('click', styleButtonRestart)
     console.log('estou no quiz');
     loadQuestion()
+  }else if (path == '/doe') {
+    alterColor('#12252B')
+
   }
 }
 

@@ -1,0 +1,148 @@
+.page__doacao{
+    display: flex;
+    align-items: center;
+    /* justify-content: center; */
+    flex-direction: column;
+    height: 100vh;
+}
+
+.doacao__title{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100px;
+    background-color: #12252B;
+    color: #fff;
+    font-size: 2.5rem;
+    font-weight: 800;
+}
+
+.doacao__content{
+    display: flex;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    justify-content: space-evenly;
+}
+
+.doacao__qr-code{
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;;
+}
+
+.doacao__qr-code__title{
+    font-size:1.5rem;
+    font-weight: 800;
+    color: #12252B;
+}
+
+.doacao__qr{
+    width: 100%;
+}
+
+.banco__dados{
+    display: flex;
+    gap: 4px;
+}
+
+.banco__container{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+}
+
+.banco{
+    display: flex;
+    align-items: center;
+    padding-left: 12px;
+    width: 300px;
+    height: 100px;
+    background-color: #12252B;
+    border-radius: 16px;
+    color: #fff;
+    gap: 16px;
+    /* margin-bottom: 16px; */
+}
+
+.banco > img {
+    width: 50px;
+}
+
+.banco__data{
+    display: flex;
+    flex-direction: column;
+}
+
+.banco__pix-nome{
+    font-weight: 800;
+}
+
+.banco__pix-nome::after{
+    content: ' Banco Central';
+    font-weight: 400;
+}
+
+.banco__pix-chave{
+    font-weight: 800;
+
+}
+
+.banco__pix-chave::after{
+    content: ' 0000-000';
+    font-weight: 400;
+}
+
+.banco__itau{
+    font-weight: 800;
+}
+.banco__itau::after{
+    content: ' Itaú';
+    font-weight: 400;
+}
+
+.banco__itau-agencia{
+    font-weight: 800;
+}
+.banco__itau-agencia::after{
+    content: ' 341';
+    font-weight: 400;
+}
+
+.banco__itau-conta{
+    font-weight: 800;
+
+}
+
+.banco__itau-conta::after{
+    content: ' 00000-44';
+    font-weight: 400;
+}
+
+@media (max-width: 850px) {
+  .doacao__content{
+      flex-direction:column;
+      height: fit-content;
+  }
+  .page__doacao{
+      height: 100%;
+      padding-bottom: 32px;
+  }
+  .doacao__qr-code__title{
+      padding-top: 32px;
+  }
+  .doacao__content{
+      justify-content: start;
+  }
+
+  .banco__container > h2{
+      text-align: center;
+  }
+
+  .doacao__qr-code{
+    width: 50%;
+}
+}
