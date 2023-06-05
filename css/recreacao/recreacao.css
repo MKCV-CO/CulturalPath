@@ -47,6 +47,7 @@
   height: 400px;
   align-items: center;
   gap: 16px;
+  margin-left: 32px;
 }
 
 .video__container {
@@ -56,30 +57,101 @@
   align-items: center;
 }
 
-.recreacao__videos {
-  padding-top: 64px;
-}
-
 .cultura {
   width: 100%;
   height: fit-content;
   padding: 32px;
 }
 
-.cultural__container {
-  display: flex;
+.cultural__estado {
   width: 100%;
-  height: fit-content;
+  height: 100vh;
   border-radius: 32px;
   background-color: #f2f2f2;
 }
 
+.recreacao__container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 0 16px 32px 16px;
+}
+
+.cultural__container {
+  display: flex;
+  width: 100%;
+  height: fit-content;
+  background-color: #f2f2f2;
+}
+
 .estado {
-  /* width: auto; */
   height: 100vh;
   background-image: url('../../img/acre.png');
   background-size: contain;
   background-repeat: no-repeat;
+}
+
+.cultural__quiz {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  height: 100vh;
+  border-radius: 32px;
+  background-color: #f2f2f2;
+  background-image: url(../../img/recreacao__quiz.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-size: 40%;
+  background-position: 0 50%;
+}
+
+.cultural__title {
+  margin-top: 32px;
+  font-size: 1.5rem;
+  color: #009d78;
+  font-weight: 800;
+  padding-left: 32px;
+}
+
+.cultural__quiz__texts {
+  width: 50%;
+  text-align: start;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: #1e1e1e;
+  gap: 32px;
+}
+
+.citacao {
+  display: flex;
+  flex-direction: column;
+}
+
+.quiz__description__name {
+  font-size: 1.5rem;
+  font-weight: 800;
+}
+
+.quiz__title {
+  font-size: 4.5rem;
+  font-weight: 800;
+}
+.quiz__description {
+  font-size: 1.5rem;
+  font-weight: 300;
+}
+
+.quiz__button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-weight: 500;
+  background-color: #009d78;
+  width: 200px;
+  height: 40px;
+  border-radius: 24px;
 }
 
 @media (max-width: 768px) {
@@ -101,5 +173,22 @@
     width: 100%;
     background-size: contain;
     height: auto;
+  }
+
+  .cultural__quiz__texts {
+    width: 100%;
+  }
+
+  .quiz__title {
+    font-size: 3rem;
+  }
+  .cultural__quiz {
+    padding-top: 40%;
+    background-size: 40%;
+    background-position: 50% 0%;
+    /* align-items: flex-end; */
+    padding-bottom: 32px;
+    padding-left: 16px;
+    height: fit-content;
   }
 }

@@ -1,5 +1,3 @@
-
-
 main {
   display: flex;
   flex-direction: column;
@@ -70,14 +68,15 @@ section {
 .container_text {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 24px;
   grid-area: text;
+  padding-left: 16px;
 }
 
 .container-seja-voluntario {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   display: grid;
   height: 100%;
   grid-template-areas: 'empty text';
@@ -90,7 +89,8 @@ section {
 }
 .text_voluntario {
   width: 100%;
-  font-size: 1.1rem;
+  font-size: 1rem;
+  text-align: start;
 }
 
 .button_seja_voluntario {
@@ -191,6 +191,14 @@ section {
 }
 
 @media (max-width: 768px) {
+  .container-seja-voluntario {
+    grid-template-columns: 0 100%;
+  }
+
+  .seja_voluntario {
+    background-size: 100%;
+  }
+
   body {
     overflow-x: hidden;
   }
@@ -199,68 +207,86 @@ section {
   }
   .home {
     padding-left: 20px;
+    height: 100vh;
   }
   .title_home {
-    font-size: 1.5rem;
+    font-size: 2.5rem;
+    line-height: 2.5rem;
   }
   .text_home {
     width: 80%;
-    font-size: 0.7rem;
+    font-size: 1rem;
+    text-align: start;
   }
   .button_home {
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 0.7rem;
-    height: 25px;
-    width: 150px;
+    font-size: 1rem;
+    height: 40px;
+    width: 200px;
+  }
+
+  .container_text {
+    width: 100vw;
   }
 
   .title_voluntario {
     width: 100%;
-    font-size: 1rem;
+    text-align: start;
+    font-size: 2rem;
   }
   .text_voluntario {
-    width: 80%;
-    font-size: 0.5rem;
+    width: 90%;
+    text-align: start;
+    font-size: 1rem;
   }
 
   .seja_voluntario {
-    height: 50vw;
+    height: 100vh;
   }
   .button_seja_voluntario {
-    font-size: 0.5rem;
-    height: 20px;
-    width: 100px;
+    font-size: 1rem;
+    height: 40px;
+    width: 200px;
   }
 
   .empresas {
     padding-left: 20px;
-    height: 100vw;
+    height: 100vh;
   }
   .text_empresas {
-    width: 70%;
-    font-size: 0.5rem;
+    width: 80%;
+    font-size: 1rem;
+    text-align: start;
   }
 
   .calendario {
-    height: 80vw;
+    color: #000;
+    height: 70vh;
+    background-size: 50%;
+    font-size: 1rem;
+    font-weight: 300;
+    background-position: -50% -35%;
   }
   .button_empresa {
-    font-size: 0.5rem;
-    height: 20px;
-    width: 100px;
+    font-size: 1rem;
+    height: 40px;
+    width: 200px;
   }
   .title_empresa {
-    font-size: 1rem;
+    font-size: 2rem;
   }
   .button_calendario {
-    font-size: 0.5rem;
-    height: 20px;
-    width: 100px;
+    font-size: 1rem;
+    height: 40px;
+    width: 200px;
+    background-color: #e99922;
+    color: #fff;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.1);
   }
   .container-empresa {
-    grid-template-columns: 40% 60%;
+    grid-template-columns: 0% 100%;
   }
 
   .video__title {
