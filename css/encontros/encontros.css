@@ -1,0 +1,83 @@
+.encontros__title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100px;
+  background-color: #085871;
+  color: #fff;
+  font-size: 2.5rem;
+  font-weight: 800;
+}
+.glider-dot.active {
+  background-color: #085871;
+}
+
+.encontros__content__title {
+  color: #085871;
+}
+
+.encontros__carrossel {
+  padding: 32px;
+}
+
+.encontros__container__tema {
+  font-size: 2.5rem;
+}
+
+.encontros__container__description__empresas::before {
+  content: 'PARCEIRAS: ';
+  font-weight: 800;
+}
+
+.encontros__container__description__voluntarios::before {
+  content: 'PALESTRANTES: ';
+  font-weight: 800;
+}
+
+.encontros__container__description__local::before {
+  content: 'LOCALIDADE: ';
+  font-weight: 800;
+}
+
+.encontros__container__description__data::before {
+  content: 'DATA: ';
+  font-weight: 800;
+}
+.encontros__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  margin: 0 32px 0 0;
+  padding: 32px;
+  border-radius: 32px;
+  background-image: url(../../img/bg2.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: #fff;
+}
+
+.link {
+  font-weight: 500;
+  color: #085871;
+}
+
+.abordagem {
+  margin: 0 32px 32px 32px;
+  padding-right: 32px;
+  text-align: justify;
+}
+
+@media (max-width: 768px) {
+  .encontros__container__tema {
+    font-size: 1.5rem;
+  }
+  .encontros__content__title {
+    text-align: center;
+  }
+  .abordagem {
+    padding: 0;
+    margin: 16px;
+  }
+}

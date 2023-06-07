@@ -10,6 +10,8 @@ import { carregarFormParceiro } from './form-parceiro.js';
 import { styleButtonRestart } from './quiz-perguntas.js/quiz.js';
 import { loadQuestion } from './quiz-perguntas.js/quiz.js';
 import { importQuerySelector } from './quiz-perguntas.js/quiz.js';
+import { recreacaoLoad } from './recreacao.js';
+import { createEncontrosCarousel } from './encontros.js';
 
 
 const routes = {
@@ -42,6 +44,7 @@ const route = async () => {
 
   } else if (path == "/encontros") {
     alterColor('#085871')
+    createEncontrosCarousel()
   } else if (path == "/voluntario") {
     alterColor('#7675DC')
     formatDate()
@@ -51,10 +54,12 @@ const route = async () => {
   } else if (path == "/parceiro") {
     carregarFormParceiro()
     alterColor('#E99922')
+
   } else if (path == "/recreacao") {
     alterColor('#009d78')
     loadContainer()
     createCarousel()
+    recreacaoLoad()
 
   } else if (path == '/quiz') {
     alterColor('#79132a')
@@ -69,7 +74,7 @@ const route = async () => {
     btnRestart.addEventListener('click', styleButtonRestart)
     console.log('estou no quiz');
     loadQuestion()
-  }else if (path == '/doe') {
+  } else if (path == '/doe') {
     alterColor('#12252B')
 
   }
