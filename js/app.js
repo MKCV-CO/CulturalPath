@@ -17,7 +17,7 @@ const createCard = (video) => {
 }
 
 export const loadContainer = async () => {
-    const url = 'http://localhost:8080/v1/cultural-path/videos-infantil'
+    const url = 'https://api-culturalpath.up.railway.app/v1/cultural-path/videos-infantil'
     const response = await fetch(url)
     const data = await response.json()
     const video = await data.videos

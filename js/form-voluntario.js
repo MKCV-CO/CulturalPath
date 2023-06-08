@@ -20,63 +20,63 @@ const getElementsForm = () => {
 
 
 var firebaseConfig = {
-    apiKey: 'AIzaSyDwrJfuzsQn3DNsI7QjGorZqvdFEXcQzMs',
-    authDomain: 'culturalpath-f11f9.firebaseapp.com',
-    projectId: 'culturalpath-f11f9',
-    storageBucket: 'culturalpath-f11f9.appspot.com',
-    messagingSenderId: '721761154595',
-    appId: '1:721761154595:web:ea111175b670097618e396',
-    measurementId: 'G-FFD5H0QTR2'
-  }
+  apiKey: 'AIzaSyDwrJfuzsQn3DNsI7QjGorZqvdFEXcQzMs',
+  authDomain: 'culturalpath-f11f9.firebaseapp.com',
+  projectId: 'culturalpath-f11f9',
+  storageBucket: 'culturalpath-f11f9.appspot.com',
+  messagingSenderId: '721761154595',
+  appId: '1:721761154595:web:ea111175b670097618e396',
+  measurementId: 'G-FFD5H0QTR2'
+}
 
-  firebase.initializeApp(firebaseConfig)
+firebase.initializeApp(firebaseConfig)
 
-  let urlRg
-  let urlDiploma
+let urlRg
+let urlDiploma
 
-  // Função para realizar o upload da imagem
-  function uploadImage(upload__local) {
-    var fileInput = document.getElementById(`${upload__local}`)
-    // LEMBRAR DE PUXAR TODOS OS ARQUIVOS >> AQUI SÓ PUXA UMMMM
-    // var file = fileInput.files[0]
-    var url = undefined
-    var file = fileInput.files[0]
-    var storageRef = firebase.storage().ref()
-    var imageRef = storageRef.child('imagens/' + file.name)
-    var uploadTask = imageRef.put(file)
+// Função para realizar o upload da imagem
+function uploadImage(upload__local) {
+  var fileInput = document.getElementById(`${upload__local}`)
+  // LEMBRAR DE PUXAR TODOS OS ARQUIVOS >> AQUI SÓ PUXA UMMMM
+  // var file = fileInput.files[0]
+  var url = undefined
+  var file = fileInput.files[0]
+  var storageRef = firebase.storage().ref()
+  var imageRef = storageRef.child('imagens/' + file.name)
+  var uploadTask = imageRef.put(file)
 
-    // Acompanhar o progresso do upload
-    uploadTask.on(
-      'state_changed',
-      function (snapshot) {
-        // Acompanhar o progresso do upload (opcional)
-        var progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100
-        console.log('Progresso do Upload: ' + progress + '%')
-      },
-      function (error) {
-        // Tratar erros durante o upload
-        console.error('Erro no upload:', error)
-      },
-     
-       function () {
-        // Upload concluído com sucesso
-        uploadTask.snapshot.ref.getDownloadURL().then(function (downloadURL) {
-          console.log('Imagem enviada com sucesso:', downloadURL)
-          if(upload__local == 'imageInputRg'){
-            urlRg = downloadURL
-          }else{
-            urlDiploma = downloadURL
-          }
-          
-        })
-      }
-    ) 
+  // Acompanhar o progresso do upload
+  uploadTask.on(
+    'state_changed',
+    function (snapshot) {
+      // Acompanhar o progresso do upload (opcional)
+      var progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100
+      console.log('Progresso do Upload: ' + progress + '%')
+    },
+    function (error) {
+      // Tratar erros durante o upload
+      console.error('Erro no upload:', error)
+    },
 
-    if(url != undefined) {
-        return url   
+    function () {
+      // Upload concluído com sucesso
+      uploadTask.snapshot.ref.getDownloadURL().then(function (downloadURL) {
+        console.log('Imagem enviada com sucesso:', downloadURL)
+        if (upload__local == 'imageInputRg') {
+          urlRg = downloadURL
+        } else {
+          urlDiploma = downloadURL
+        }
+
+      })
     }
+  )
 
+  if (url != undefined) {
+    return url
   }
+
+}
 
 
 
@@ -84,12 +84,13 @@ var firebaseConfig = {
 
 const handleSubmit = async () => {
   const nome = document.getElementById('nome').value
+  console.log(nome);
   const cpf = document.getElementById('cpf').value
   const rg = document.getElementById('rg').value
   const email = document.getElementById('email').value
   const telefone = document.getElementById('telefone').value
   let data_brasileira = document.getElementById('dt_nasc').value
-  const data_nascimento = data_brasileira.split('/').reverse().join('-');    
+  const data_nascimento = data_brasileira.split('/').reverse().join('-');
   let fotoRg = urlRg
   let fotoDiploma = urlDiploma
   let contribuicao = document.getElementById('contribuicao__text').value
@@ -103,8 +104,16 @@ const handleSubmit = async () => {
   const cidade = document.getElementById('cidade').value
   const estado = document.getElementById('estado').value
 
+  if (nome, cpf, rg, email, telefone, data_nascimento, fotoRg, fotoDiploma, contribuicao, genero,
+    estado_civil, logradouro, cep, complemento, numero, bairro, cidade, estado == null ||
+    nome, cpf, rg, email, telefone, data_nascimento, fotoRg, fotoDiploma, contribuicao, genero,
+    estado_civil, logradouro, cep, complemento, numero, bairro, cidade, estado == undefined
+    || nome, cpf, rg, email, telefone, data_nascimento, fotoRg, fotoDiploma, contribuicao, genero,
+    estado_civil, logradouro, cep, complemento, numero, bairro, cidade, estado == '') {
 
-    
+    alert('existem dados não preenchidos')
+  } else {
+
     let jsonDadosPessoais = {
       nome: nome,
       cpf: cpf,
@@ -119,7 +128,7 @@ const handleSubmit = async () => {
       id_estado_civil: estado_civil
     }
     let jsonDadosEndereco = {
-      logradouro: logradouro ,
+      logradouro: logradouro,
       cep: cep,
       numero: numero,
       complemento: complemento,
@@ -127,29 +136,35 @@ const handleSubmit = async () => {
       cidade: cidade,
       estado: estado
     }
-    let jsonVoluntario = {voluntario: jsonDadosPessoais, endereco: jsonDadosEndereco}
+    let jsonVoluntario = { voluntario: jsonDadosPessoais, endereco: jsonDadosEndereco }
     console.log(jsonVoluntario);
-    
-    postVoluntarioApi(jsonVoluntario)
 
+
+    postVoluntarioApi(jsonVoluntario)
+  }
 }
 
 const postVoluntarioApi = async (dadosBody) => {
 
-    const dataBody = dadosBody
- 
-    const initPost = {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(dataBody)
-    }
+  const dataBody = dadosBody
 
-    const url = 'http://localhost:8080/v1/cultural-path/voluntario';
-    const response = await fetch(url, initPost);
-    const voluntario = await response.json()
+  const initPost = {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(dataBody)
+  }
+
+  const url = 'https://api-culturalpath.up.railway.app/v1/cultural-path/voluntario';
+  const response = await fetch(url, initPost);
+  const voluntario = await response.json()
+  console.log();
+  if (voluntario.status == '201') {
     alert('Voluntário adicionada no sistema!');
+  } else {
+    alert('Erro ao gravar, verifique os dados e refaça o cadastro');
+  }
 }
 
 
@@ -164,7 +179,7 @@ const handleDiploma = () => {
 
 const eventsForms = () => {
 
-input__rg.addEventListener('change', handleRg)
-input__diploma.addEventListener('change', handleDiploma)
-button__submit.addEventListener('click', handleSubmit)
+  input__rg.addEventListener('change', handleRg)
+  input__diploma.addEventListener('change', handleDiploma)
+  button__submit.addEventListener('click', handleSubmit)
 }

@@ -164,7 +164,7 @@
 }
 
 .form__parceiro__data > input,
-select {
+#motivo {
   width: 500px;
   height: 50px;
   border: 0.25px solid #cccccc;

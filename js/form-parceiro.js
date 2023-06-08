@@ -4,8 +4,8 @@ const path = window.location.pathname;
 console.log(path);
 
 export const carregarFormParceiro = () => {
-    const botao = document.getElementById("parceiro__form__button");
-    botao.addEventListener("click", handleSubmit);
+  const botao = document.getElementById("parceiro__form__button");
+  botao.addEventListener("click", handleSubmit);
 };
 
 // var id_tipo_contato = document.querySelector('input[name=fav_language]:checked').value
@@ -31,11 +31,11 @@ const handleSubmit = async () => {
     id_tipo_contato: Number(id_tipo_contato.value),
   };
   console.log(jsonDados);
-//   console.log(id_tipo_contato.value);
-//   console.log(id_tipo_contato.id);
-  
+  //   console.log(id_tipo_contato.value);
+  //   console.log(id_tipo_contato.id);
 
-    postParceiroApi(jsonDados);
+
+  postParceiroApi(jsonDados);
 };
 
 const postParceiroApi = async (dadosBody) => {
@@ -49,7 +49,7 @@ const postParceiroApi = async (dadosBody) => {
     body: JSON.stringify(dataBody),
   };
 
-  const url = "http://localhost:8080/v1/cultural-path/empresa";
+  const url = "https://api-culturalpath.up.railway.app/v1/cultural-path/empresa";
   const response = await fetch(url, initPost);
   const voluntario = await response.json();
   alert("Parceiro adicionada no sistema!");
