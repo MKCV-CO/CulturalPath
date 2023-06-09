@@ -142,6 +142,7 @@
 
 .form__parceiro {
   height: 100%;
+  width: 500px;
   padding: 32px;
   gap: 24px;
   background-color: #ededed;
@@ -154,6 +155,7 @@
 .form__parceiro__data {
   display: flex;
   flex-direction: column;
+  width: 90%;
 }
 
 .form__parceiro__radio {
@@ -165,7 +167,8 @@
 
 .form__parceiro__data > input,
 #motivo {
-  width: 500px;
+  width: 100%;
+  /* max-width: 100%; */
   height: 50px;
   border: 0.25px solid #cccccc;
   background-color: #f8f8f8;
