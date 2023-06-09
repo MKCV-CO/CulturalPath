@@ -136,6 +136,24 @@
 
 @media (max-width: 768px) {
   form {
-    width: 100vw;
+    width: 100%;
+  }
+
+  .input {
+    width: 100%;
+  }
+
+  .formulario__voluntario {
+    margin: 32px 0 32px 0;
+    padding: 32px 0 32px 0;
+    width: 95%;
+  }
+
+  .formulario__voluntario__contribuicao {
+    width: 95%;
+  }
+
+  .form__content {
+    width: 90%;
   }
 }

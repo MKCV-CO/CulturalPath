@@ -1,5 +1,13 @@
 "use strict"
 
+import { alterColor } from '../header-footer.js';
+
+let inputDoQuiz
+let buttonDoQuiz
+
+
+
+
 let question
 let answers
 let spanQtnd
@@ -23,8 +31,18 @@ import questions from "./questions.js"
 let currentIndex = 0
 let questionCorrect = 0
 
+let valorDoInput
 
+export const loadScreenQuiz = () => {
 
+    alterColor('#79132a')
+    inputDoQuiz = document.getElementById('input-nome')
+    buttonDoQuiz = document.getElementById('button-inicio')
+    buttonDoQuiz.addEventListener('click', function () {
+        valorDoInput = inputDoQuiz.value
+    }
+    )
+}
 
 export const styleButtonRestart = () => {
     content.style.display = "flex"

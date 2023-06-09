@@ -2,6 +2,10 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Barra de Rolagem */
+
+/* Fundo que corre */
+
 main {
   display: flex;
   flex-direction: column;

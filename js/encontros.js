@@ -1,4 +1,7 @@
-export const createEncontrosCarousel = () => {
+import { alterColor } from './header-footer.js';
+
+
+export const loadScreenEncontros = () => {
   const carousel = document.getElementById('carousel_encontro__container')
 
   new Glider(carousel, {
@@ -6,7 +9,10 @@ export const createEncontrosCarousel = () => {
     slidesToScroll: 1,
     draggable: true,
     dots: '.dots',
-
+    arrows: {
+      prev: '.prev__encontros',
+      next: '.next__encontros',
+    },
     scrollLock: true,
     responsive: [
       {
@@ -25,5 +31,7 @@ export const createEncontrosCarousel = () => {
       }
     ]
   })
+
+  alterColor('#085871')
 }
 

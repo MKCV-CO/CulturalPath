@@ -17,8 +17,14 @@ header {
   z-index: 999;
 }
 
-.navbar a:hover {
-  border-bottom: 2px solid black;
+.navbar li > a {
+  border-bottom: 2px solid transparent;
+  width: fit-content;
+  text-align: start;
+}
+
+.navbar li > a:hover {
+  border-color: #000;
   transform: translateY(5px);
 }
 
@@ -87,6 +93,7 @@ header {
     display: flex;
     justify-content: flex-start;
     right: 2%;
+    padding: 16px;
   }
   .logo_culturalPath {
     width: 15%;

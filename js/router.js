@@ -1,17 +1,13 @@
 "use strict";
 
 
-import { alterColor } from './style.js';
-import { createCarousel } from './style.js';
-import { formatDate } from './style.js';
-import { carregarForm } from './form-voluntario.js';
-import { loadContainer } from './app.js';
-import { carregarFormParceiro } from './form-parceiro.js';
-import { styleButtonRestart } from './quiz-perguntas.js/quiz.js';
-import { loadQuestion } from './quiz-perguntas.js/quiz.js';
-import { importQuerySelector } from './quiz-perguntas.js/quiz.js';
-import { recreacaoLoad } from './recreacao.js';
-import { createEncontrosCarousel } from './encontros.js';
+import { alterColor } from './header-footer.js';
+import { loadScreenVoluntario } from './form-voluntario.js';
+import { loadScreenParceiro } from './form-parceiro.js';
+import { loadScreenRecreacao } from './recreacao.js';
+import { loadScreenEncontros } from './encontros.js';
+import { loadScreenQuiz } from './quiz/quiz.js';
+import { loadScreenQuizQuestion } from './quiz/questions.js';
 
 
 const routes = {
@@ -22,7 +18,7 @@ const routes = {
   "/voluntario": "/pages/voluntario.html",
   "/recreacao": "/pages/recreacao.html",
   "/quiz": "/pages/quiz.html",
-  "/quiz-perguntas": "/pages/quiz-perguntas.html",
+  "/questions": "/pages/questions.html",
   "/doe": "/pages/doe.html"
 };
 
@@ -41,40 +37,20 @@ const route = async () => {
 
   if (path == "/" || path == "/index.html") {
     alterColor('#0D9ECC')
-
   } else if (path == "/encontros") {
-    alterColor('#085871')
-
-    createEncontrosCarousel()
+    loadScreenEncontros()
   } else if (path == "/voluntario") {
-    alterColor('#7675DC')
-    formatDate()
-    carregarForm()
+    loadScreenVoluntario()
   } else if (path == "/calendario") {
     alterColor('#79132A')
   } else if (path == "/parceiro") {
-    carregarFormParceiro()
-    alterColor('#E99922')
-
+    loadScreenParceiro()
   } else if (path == "/recreacao") {
-    alterColor('#009d78')
-    loadContainer()
-    createCarousel()
-    recreacaoLoad()
-
+    loadScreenRecreacao()
   } else if (path == '/quiz') {
-    alterColor('#79132a')
-    const inputDoQuiz = document.getElementById('input-nome')
-    const buttonDoQuiz = document.getElementById('button-inicio')
-    buttonDoQuiz.addEventListener('click', function () {
-      valorDoInput = inputDoQuiz.value
-    })
-  } else if (path == '/quiz-perguntas') {
-    const btnRestart = document.querySelector(".finish button")
-    importQuerySelector()
-    btnRestart.addEventListener('click', styleButtonRestart)
-    console.log('estou no quiz');
-    loadQuestion()
+    loadScreenQuiz()
+  } else if (path == '/questions') {
+    loadScreenQuizQuestion()
   } else if (path == '/doe') {
     alterColor('#12252B')
 

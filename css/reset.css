@@ -65,3 +65,17 @@ a {
     transform: scaleX(1);
   }
 }
+
+/* nice scroll bar */
+::-webkit-scrollbar {
+  width: 1px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+  border-radius: 10px;
+  position: fixed;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 200);
+  border-radius: 10px;
+}

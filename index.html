@@ -36,11 +36,10 @@
     <!-- IMPORT FONTAWESOME -->
 
     <!-- IMPORT JS -->
-    <script src="./js/menuHeader.js" defer></script>
     <script src="./js/app.js" defer type="module"></script>
     <script src="./js/form-voluntario.js" defer type="module"></script>
     <script src="./js/form-parceiro.js" defer type="module"></script>
-    <script src="./js/quiz-perguntas.js/quiz.js" defer type="module"></script>
+    <script src="./js/quiz/quiz.js" defer type="module"></script>
     <script src="./js/recreacao.js" defer type="module"></script>
     <script src="./js/encontros.js" defer type="module"></script>
     <!-- IMPORT JS -->
@@ -86,7 +85,16 @@
     <!-- META CALENDARIO -->
   </head>
   <body>
-    
+    <div vw class="enabled">
+      <div vw-access-button class="active"></div>
+      <div vw-plugin-wrapper>
+        <div class="vw-plugin-top-wrapper"></div>
+      </div>
+    </div>
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <script>
+      new window.VLibras.Widget('https://vlibras.gov.br/app')
+    </script>
     <header>
       <div class="container_header">
         <img
@@ -205,8 +213,8 @@
 
         <div class="container-rede-social">
           <div class="links-button">
-            <a href="#">Página inicial</a>
-            <a href="#">Seja nosso Parceiro</a>
+            <a href="/">Página inicial</a>
+            <a href="/parceiro" onclick="route()">Seja nosso Parceiro</a>
             <button class="button-footer" id="button-footer">Doe Agora</button>
           </div>
           <div class="rede-social">

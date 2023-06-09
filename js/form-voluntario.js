@@ -1,5 +1,6 @@
 'use strict'
 const path = window.location.pathname;
+import { alterColor } from './header-footer.js';
 
 console.log(path);
 
@@ -7,9 +8,11 @@ let button__submit
 let input__rg
 let input__diploma
 
-export const carregarForm = () => {
+export const loadScreenVoluntario = () => {
+  alterColor('#7675DC')
   getElementsForm()
   eventsForms()
+  formatDate()
 }
 
 const getElementsForm = () => {
@@ -96,7 +99,6 @@ function uploadImage(upload__local) {
 
 const handleSubmit = async () => {
   const nome = document.getElementById('nome').value
-  console.log(nome);
   const cpf = document.getElementById('cpf').value
   const rg = document.getElementById('rg').value
   const email = document.getElementById('email').value
@@ -115,15 +117,26 @@ const handleSubmit = async () => {
   const bairro = document.getElementById('bairro').value
   const cidade = document.getElementById('cidade').value
   const estado = document.getElementById('estado').value
-  console.log(contribuicao);
 
+  if (
+    nome == null || nome == undefined || nome == '' ||
+    cpf == null || cpf == undefined || cpf == '' ||
+    rg == null || rg == undefined || rg == '' ||
+    email == null || email == undefined || email == '' ||
+    telefone == null || telefone == undefined || telefone == '' ||
+    data_nascimento == null || data_nascimento == undefined || data_nascimento == '' ||
+    contribuicao == null || contribuicao == undefined || contribuicao == '' ||
+    genero == null || genero == undefined || genero == '' ||
+    estado_civil == null || estado_civil == undefined || estado_civil == '' ||
+    logradouro == null || logradouro == undefined || logradouro == '' ||
+    cep == null || cep == undefined || cep == '' ||
+    complemento == null || complemento == undefined || complemento == '' ||
+    numero == null || numero == undefined || numero == '' ||
+    bairro == null || bairro == undefined || bairro == '' ||
+    cidade == null || cidade == undefined || cidade == '' ||
+    estado == null || estado == undefined || estado == ''
 
-  if (nome, cpf, rg, email, telefone, data_nascimento, fotoRg, fotoDiploma, contribuicao, genero,
-    estado_civil, logradouro, cep, complemento, numero, bairro, cidade, estado == null ||
-    nome, cpf, rg, email, telefone, data_nascimento, fotoRg, fotoDiploma, contribuicao, genero,
-    estado_civil, logradouro, cep, complemento, numero, bairro, cidade, estado == undefined
-    || nome, cpf, rg, email, telefone, data_nascimento, fotoRg, fotoDiploma, contribuicao, genero,
-    estado_civil, logradouro, cep, complemento, numero, bairro, cidade, estado == '') {
+  ) {
 
     iziToast.error({
       backgroundColor: '#FEB6BA',
@@ -147,13 +160,6 @@ const handleSubmit = async () => {
         position: 'topCenter',
         title: 'FALHA AO CADASTRAR',
         message: 'A foto do DIPLOMA não foi inserida ou o upload não foi completado, aguarde ou reenvie.',
-      });
-    } else if (contribuicao == undefined || contribuicao == '' || contribuicao == null) {
-      iziToast.error({
-        backgroundColor: '#FEB6BA',
-        position: 'topCenter',
-        title: 'FALHA AO CADASTRAR',
-        message: 'O campo CONTRIBUIÇÃO não foi preenchido.',
       });
     }
     else {
@@ -205,7 +211,6 @@ const postVoluntarioApi = async (dadosBody) => {
   const url = 'https://api-culturalpath.up.railway.app/v1/cultural-path/voluntario';
   const response = await fetch(url, initPost);
   const voluntario = await response.json()
-  console.log();
   if (voluntario.status == '201') {
     iziToast.success({
       backgroundColor: '#A3E1B2',
@@ -213,12 +218,19 @@ const postVoluntarioApi = async (dadosBody) => {
       title: 'SUCESSO AO GRAVAR',
       message: 'O voluntário foi cadastrado com sucesso.',
     });
-  } else {
+  } else if (voluntario.status == '404') {
     iziToast.error({
       backgroundColor: '#FEB6BA',
       position: 'topCenter',
       title: 'FALHA AO CADASTRAR',
       message: 'O voluntário já foi cadastrado em nossas bases, em breve entraremos em contato.',
+    });
+  } else {
+    iziToast.error({
+      backgroundColor: '#FEB6BA',
+      position: 'topCenter',
+      title: 'FALHA AO CADASTRAR',
+      message: 'O servidor de banco de dados está fora do ar, entre em contato com o nosso suporte (11) 3333-3333.',
     });
   }
 
@@ -241,3 +253,63 @@ const eventsForms = () => {
   input__diploma.addEventListener('change', handleDiploma)
   button__submit.addEventListener('click', handleSubmit)
 }
+
+const formatDate = () => {
+  var dt_nasc = document.querySelector("#dt_nasc");
+  var idade = document.querySelector("#idade");
+
+  // PREENCHIMENTO AUTOMÁTICO DO CAMPO IDADE
+  dt_nasc.addEventListener("blur", function () {
+
+    let data_brasileira = dt_nasc.value;
+    let data_americana = data_brasileira.split('/').reverse().join('-');
+
+    console.log(data_americana);
+
+
+    const today = new Date();
+    const birthDate = new Date(data_americana);
+    let age = today.getFullYear() - birthDate.getFullYear();
+    const m = today.getMonth() - birthDate.getMonth();
+
+    if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
+      age--;
+    }
+
+    idade.value = age;
+  })
+
+  document.getElementById('cep').addEventListener('blur', preencherDados)
+
+}
+
+// PESQUISAR O CEP ATRAVÉS DA API VIACEP
+const pesquisarCep = async (cep) => {
+
+  const url = `https://viacep.com.br/ws/${cep}/json/`
+
+  const response = await fetch(url)
+  const data = await response.json()
+
+  return {
+    municipio: data.localidade,
+    estado: data.uf,
+    bairro: data.bairro,
+    logradouro: data.logradouro
+  }
+
+}
+
+// PREENCHER OS DADOS COM O RETORNO DA FUNÇÃO 'PESQUISAR CEP'
+const preencherDados = async () => {
+
+  const cepDigitado = document.getElementById('cep').value
+  const cep = await pesquisarCep(cepDigitado)
+  document.getElementById('endereco').value = cep.logradouro
+  document.getElementById('bairro').value = cep.bairro
+  document.getElementById('cidade').value = cep.municipio
+  document.getElementById('estado').value = cep.estado
+
+}
+
+// EVENTO DE BLUR PARA CHAMAR A FUNÇÃO PREENCHER DADOS

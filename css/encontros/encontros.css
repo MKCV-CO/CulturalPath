@@ -69,7 +69,30 @@
   text-align: justify;
 }
 
+.buttonList__encontros {
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+  width: 100%;
+}
+.buttonList__encontros > button {
+  width: 150px;
+  height: 40px;
+  background-color: #085871;
+  border-radius: 32px;
+  color: #fff;
+  outline: none;
+  border: none;
+}
+
 @media (max-width: 768px) {
+  .video > iframe {
+    width: 100vw;
+    height: 230px;
+  }
+
   .encontros__container__tema {
     font-size: 1.5rem;
   }
@@ -79,5 +102,9 @@
   .abordagem {
     padding: 0;
     margin: 16px;
+  }
+
+  #dots {
+    display: none;
   }
 }

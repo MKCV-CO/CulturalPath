@@ -2,13 +2,16 @@
 let mapa
 let cultural__estado
 let estado
+import { alterColor } from './header-footer.js';
 
-export const recreacaoLoad = () => {
+export const loadScreenRecreacao = () => {
   mapa = document.querySelector('#map')
   cultural__estado = document.getElementById('cultural__estado')
   estado = document.getElementById('select_estado')
-
+  alterColor('#009d78')
+  loadContainer()
   recreacaoEvents()
+  createCarousel()
 }
 
 
@@ -51,7 +54,7 @@ const criarEstado = (estado) => {
   const comida = document.createElement('span')
   comida.classList.add('data-estado__comida')
   // comida é um array, tenho que ver o que retorna
-  comida.textContent = `${estado.comida}`
+  comida.textContent = `${estado.comida}`.replaceAll(',', ', ')
 
   const regiao = document.createElement('span')
   regiao.classList.add('data-estado__regiao')
@@ -80,5 +83,64 @@ const carregarEstado = async (sigla) => {
   const card = criarEstado(estado)
 
   container.replaceChildren(card)
+
+}
+
+
+
+export const createCarousel = () => {
+  const carousel = document.getElementById('video__container')
+
+  new Glider(carousel, {
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    draggable: true,
+    dots: '.dots',
+    arrows: {
+      prev: '.prev',
+      next: '.next'
+    },
+    scrollLock: true,
+    responsive: [
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2
+        }
+      },
+      {
+        breakpoint: 900,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 3
+        }
+      }
+    ]
+  })
+}
+
+const createCard = (video) => {
+
+  let card = document.createElement('div')
+  card.classList = 'video'
+  card.innerHTML = `<iframe
+  src="https://www.youtube.com/embed/${video.url}"
+  title="YouTube video player"
+  frameborder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+  allowfullscreen></iframe>`
+  return card
+}
+
+export const loadContainer = async () => {
+  const url = 'https://api-culturalpath.up.railway.app/v1/cultural-path/videos-infantil'
+  const response = await fetch(url)
+  const data = await response.json()
+  const video = await data.videos
+  const container = document.getElementById('video__container')
+  const cards = video.map(createCard)
+
+  container.replaceChildren(...cards)
 
 }
