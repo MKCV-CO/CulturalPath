@@ -21,6 +21,55 @@ const getElementsForm = () => {
   input__diploma = document.getElementById('imageInputDiploma')
 }
 
+function validarCPF(cpf) {
+  // Remove os pontos e traços do CPF
+  cpf = cpf.replace(/\./g, '').replace(/-/g, '');
+
+  // Verifica se o CPF possui 11 dígitos
+  if (cpf.length !== 11) {
+    return false;
+  }
+
+  // Verifica se todos os dígitos são iguais, o que é inválido para um CPF válido
+  if (/^(\d)\1+$/.test(cpf)) {
+    return false;
+  }
+
+  // Calcula o primeiro dígito verificador
+  let soma = 0;
+  for (let i = 0; i < 9; i++) {
+    soma += parseInt(cpf.charAt(i)) * (10 - i);
+  }
+  let primeiroDigito = 11 - (soma % 11);
+  if (primeiroDigito > 9) {
+    primeiroDigito = 0;
+  }
+
+  // Verifica se o primeiro dígito verificador está correto
+  if (parseInt(cpf.charAt(9)) !== primeiroDigito) {
+    return false;
+  }
+
+  // Calcula o segundo dígito verificador
+  soma = 0;
+  for (let i = 0; i < 10; i++) {
+    soma += parseInt(cpf.charAt(i)) * (11 - i);
+  }
+  let segundoDigito = 11 - (soma % 11);
+  if (segundoDigito > 9) {
+    segundoDigito = 0;
+  }
+
+  // Verifica se o segundo dígito verificador está correto
+  if (parseInt(cpf.charAt(10)) !== segundoDigito) {
+    return false;
+  }
+
+  // Se todas as verificações passaram, o CPF é válido
+  return true;
+}
+
+
 
 var firebaseConfig = {
   apiKey: 'AIzaSyDwrJfuzsQn3DNsI7QjGorZqvdFEXcQzMs',
@@ -160,6 +209,13 @@ const handleSubmit = async () => {
         position: 'topCenter',
         title: 'FALHA AO CADASTRAR',
         message: 'A foto do DIPLOMA não foi inserida ou o upload não foi completado, aguarde ou reenvie.',
+      });
+    } else if (!validarCPF(cpf)) {
+      iziToast.error({
+        backgroundColor: '#FEB6BA',
+        position: 'topCenter',
+        title: 'ERRO AO CADASTRAR',
+        message: 'O CPF preenchido é inválido',
       });
     }
     else {
