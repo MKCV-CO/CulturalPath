@@ -121,10 +121,6 @@
   transition: all 0.5s;
 }
 
-.form__submit:hover {
-  background-color: #00779b;
-}
-
 .invalid {
   border-color: red;
 }

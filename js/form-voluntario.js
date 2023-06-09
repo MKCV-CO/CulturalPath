@@ -37,6 +37,10 @@ let urlDiploma
 // Função para realizar o upload da imagem
 function uploadImage(upload__local) {
   var fileInput = document.getElementById(`${upload__local}`)
+  iziToast.info({
+    title: 'UPLOAD',
+    message: 'Aguarde o fim do upload!',
+  });
   // LEMBRAR DE PUXAR TODOS OS ARQUIVOS >> AQUI SÓ PUXA UMMMM
   // var file = fileInput.files[0]
   var url = undefined
@@ -64,8 +68,16 @@ function uploadImage(upload__local) {
         console.log('Imagem enviada com sucesso:', downloadURL)
         if (upload__local == 'imageInputRg') {
           urlRg = downloadURL
+          iziToast.success({
+            title: 'UPLOAD',
+            message: 'Foto do rg cadastrado',
+          });
         } else {
           urlDiploma = downloadURL
+          iziToast.success({
+            title: 'UPLOAD',
+            message: 'Foto do diploma cadastrado',
+          });
         }
 
       })
@@ -103,6 +115,8 @@ const handleSubmit = async () => {
   const bairro = document.getElementById('bairro').value
   const cidade = document.getElementById('cidade').value
   const estado = document.getElementById('estado').value
+  console.log(contribuicao);
+
 
   if (nome, cpf, rg, email, telefone, data_nascimento, fotoRg, fotoDiploma, contribuicao, genero,
     estado_civil, logradouro, cep, complemento, numero, bairro, cidade, estado == null ||
@@ -111,37 +125,69 @@ const handleSubmit = async () => {
     || nome, cpf, rg, email, telefone, data_nascimento, fotoRg, fotoDiploma, contribuicao, genero,
     estado_civil, logradouro, cep, complemento, numero, bairro, cidade, estado == '') {
 
-    alert('existem dados não preenchidos')
+    iziToast.error({
+      backgroundColor: '#FEB6BA',
+      position: 'topCenter',
+      title: 'ERRO AO CADASTRAR',
+      message: 'Um ou mais dados não foram preenchidos',
+    });
+
   } else {
 
-    let jsonDadosPessoais = {
-      nome: nome,
-      cpf: cpf,
-      rg: rg,
-      email: email,
-      telefone: telefone,
-      data_nascimento: data_nascimento,
-      foto_rg: fotoRg,
-      foto_diploma: fotoDiploma,
-      contribuicao: contribuicao,
-      id_genero: genero,
-      id_estado_civil: estado_civil
+    if (fotoRg == undefined || fotoRg == '' || fotoRg == null) {
+      iziToast.error({
+        backgroundColor: '#FEB6BA',
+        position: 'topCenter',
+        title: 'FALHA AO CADASTRAR',
+        message: 'A foto do RG não foi inserida ou o upload não foi completado, aguarde ou reenvie.',
+      });
+    } else if (fotoDiploma == undefined || fotoDiploma == '' || fotoDiploma == null) {
+      iziToast.error({
+        backgroundColor: '#FEB6BA',
+        position: 'topCenter',
+        title: 'FALHA AO CADASTRAR',
+        message: 'A foto do DIPLOMA não foi inserida ou o upload não foi completado, aguarde ou reenvie.',
+      });
+    } else if (contribuicao == undefined || contribuicao == '' || contribuicao == null) {
+      iziToast.error({
+        backgroundColor: '#FEB6BA',
+        position: 'topCenter',
+        title: 'FALHA AO CADASTRAR',
+        message: 'O campo CONTRIBUIÇÃO não foi preenchido.',
+      });
     }
-    let jsonDadosEndereco = {
-      logradouro: logradouro,
-      cep: cep,
-      numero: numero,
-      complemento: complemento,
-      bairro: bairro,
-      cidade: cidade,
-      estado: estado
-    }
-    let jsonVoluntario = { voluntario: jsonDadosPessoais, endereco: jsonDadosEndereco }
-    console.log(jsonVoluntario);
+    else {
+
+      let jsonDadosPessoais = {
+        nome: nome,
+        cpf: cpf,
+        rg: rg,
+        email: email,
+        telefone: telefone,
+        data_nascimento: data_nascimento,
+        foto_rg: fotoRg,
+        foto_diploma: fotoDiploma,
+        contribuicao: contribuicao,
+        id_genero: genero,
+        id_estado_civil: estado_civil
+      }
+      let jsonDadosEndereco = {
+        logradouro: logradouro,
+        cep: cep,
+        numero: numero,
+        complemento: complemento,
+        bairro: bairro,
+        cidade: cidade,
+        estado: estado
+      }
+      let jsonVoluntario = { voluntario: jsonDadosPessoais, endereco: jsonDadosEndereco }
+      console.log(jsonVoluntario);
 
 
-    postVoluntarioApi(jsonVoluntario)
+      postVoluntarioApi(jsonVoluntario)
+    }
   }
+
 }
 
 const postVoluntarioApi = async (dadosBody) => {
@@ -161,11 +207,23 @@ const postVoluntarioApi = async (dadosBody) => {
   const voluntario = await response.json()
   console.log();
   if (voluntario.status == '201') {
-    alert('Voluntário adicionada no sistema!');
+    iziToast.success({
+      backgroundColor: '#A3E1B2',
+      position: 'topCenter',
+      title: 'SUCESSO AO GRAVAR',
+      message: 'O voluntário foi cadastrado com sucesso.',
+    });
   } else {
-    alert('Erro ao gravar, verifique os dados e refaça o cadastro');
+    iziToast.error({
+      backgroundColor: '#FEB6BA',
+      position: 'topCenter',
+      title: 'FALHA AO CADASTRAR',
+      message: 'O voluntário já foi cadastrado em nossas bases, em breve entraremos em contato.',
+    });
   }
+
 }
+
 
 
 const handleRg = () => {

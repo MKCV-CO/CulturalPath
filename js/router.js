@@ -44,6 +44,7 @@ const route = async () => {
 
   } else if (path == "/encontros") {
     alterColor('#085871')
+
     createEncontrosCarousel()
   } else if (path == "/voluntario") {
     alterColor('#7675DC')
