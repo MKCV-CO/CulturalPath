@@ -293,18 +293,30 @@
 .events .event:nth-child(even) {
   background: transparent;
 }
-.events .event:hover {
-  background: linear-gradient(90deg, var(--primary-clr), transparent);
-}
-.events .event .title {
+
+.events .event .title,
+.row,
+.objetivo,
+.escola,
+.event-time {
   display: flex;
-  align-items: center;
+  align-items: start;
   pointer-events: none;
+  display: flex;
+  gap: 4px;
+  color: #fff;
+  font-size: 1rem !important;
 }
+
+.event__title {
+  font-weight: 800;
+  text-transform: uppercase;
+  color: #fff;
+}
+
 .events .event .title .event-title {
   font-size: 1rem;
   font-weight: 400;
-  margin-left: 20px;
 }
 .events .event i {
   color: var(--primary-clr);
@@ -316,9 +328,10 @@
 .events .event .event-time {
   font-size: 0.8rem;
   font-weight: 400;
-  color: #878895;
-  margin-left: 15px;
+  color: #fff;
   pointer-events: none;
+  gap: 4px;
+  display: flex;
 }
 .events .event:hover .event-time {
   color: #fff;
@@ -510,6 +523,7 @@
   }
   .events {
     padding-bottom: 340px;
+    max-height: none;
   }
   .add-event-wrapper {
     bottom: 100px;
@@ -519,6 +533,7 @@
   .calendar .month {
     height: 75px;
   }
+
   .calendar .weekdays {
     height: 50px;
   }

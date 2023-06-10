@@ -70,6 +70,9 @@ let eventsArr = [
       {
         title: "Meu segundo aniversário ",
         time: "12:00 AM",
+        objetivo: "AAAAAAAA",
+        escola: "nome"
+
       },
       {
         title: "Evento 2",
@@ -92,7 +95,6 @@ let eventsArr = [
 eventsArr.splice(0, eventsArr.length);
 
 
-let i = 0
 
 const createPalestra = (palestra) => {
 
@@ -117,17 +119,18 @@ const createPalestra = (palestra) => {
     events: [
       {
         title: `${palestra.tema}`,
+        objetivo: `${palestra.objetivo}`,
+        escola: `${palestra.nome}`,
         time: `09:00 AM - 05:00 PM`
       }
     ]
   }
-  i++
 
   return card
 }
 
 export const loadPalestra = async () => {
-  const url = 'http://localhost:8080/v1/cultural-path/palestra'
+  const url = 'https://api-culturalpath.up.railway.app/v1/cultural-path/palestra'
   const response = await fetch(url)
   const data = await response.json()
   const palestra = await data.palestras
@@ -280,8 +283,6 @@ function addListner() {
   });
 }
 
-
-
 function gotoDate() {
   console.log("here");
   const dateArr = dateInput.value.split("/");
@@ -305,6 +306,7 @@ function getActiveDay(date) {
 }
 
 //function update events when a day is active
+// ESSSA É A FUNÇÃO AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 function updateEvents(date) {
   let events = "";
   eventsArr.forEach((event) => {
@@ -316,14 +318,20 @@ function updateEvents(date) {
       event.events.forEach((event) => {
         events += `<div class="event">
             <div class="title">
-              <i class="fas fa-circle"></i>
+            <span class="event__title">Tema: </span>
               <h3 class="event-title">${event.title}</h3>
             </div>
+            <div class="row">
+            <span class="event__title">Objetivo: </span>
+            <span class="event-time">${event.objetivo}</span>
+          </div>
             <div class="event-time">
-              <span class="event-time">${event.time}</span>
+            <span class="event__title">Período: </span>
+              <span class="event-time"> ${event.time}</span>
             </div>
-            <div class="">
-            <span class="event-time">E.E. PROFESSORA MARIA SOARES SANTOS</span>
+            <div class="escola">
+            <span class="event__title">Escola: </span>
+            <span class="event-time">${event.escola}</span>
           </div>
         </div>`;
       });
@@ -337,7 +345,6 @@ function updateEvents(date) {
   eventsContainer.innerHTML = events;
   saveEvents();
 }
-
 
 //function to save events in local storage
 function saveEvents() {
