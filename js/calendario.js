@@ -394,6 +394,7 @@ export const loadCalendarioScreen = () => {
 
   addEventBtn.addEventListener('click', function () {
   })
+  gotoBtn.addEventListener("click", gotoDate);
 
   prev.addEventListener("click", prevMonth);
   next.addEventListener("click", nextMonth);
@@ -402,7 +403,6 @@ export const loadCalendarioScreen = () => {
     today = new Date();
     month = today.getMonth();
     year = today.getFullYear();
-    gotoBtn.addEventListener("click", gotoDate);
 
     //function to add event
     addEventBtn.addEventListener("click", () => {
