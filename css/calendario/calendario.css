@@ -1,12 +1,5 @@
-.page__calendario {
-  padding: 32px;
-  position: relative;
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding-bottom: 30px;
-  background-color: #e2e1dc;
+:root {
+  --primary-clr: #79132a;
 }
 
 .calendario__title {
@@ -21,6 +14,15 @@
   font-weight: 800;
 }
 
+.page__calendario {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 30px;
+  margin: 32px;
+}
 .container__calendario {
   position: relative;
   width: 1200px;
@@ -29,7 +31,6 @@
   padding: 5px;
   color: #fff;
   display: flex;
-
   border-radius: 10px;
   background-color: #79132a;
 }
@@ -49,7 +50,6 @@
   border-radius: 5px;
   background-color: #fff;
 }
-
 /* set after behind the main element */
 .calendar::before,
 .calendar::after {
@@ -79,22 +79,15 @@
   font-weight: 500;
   text-transform: capitalize;
 }
-
-.month > i {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #79132a;
-}
-
 .calendar .month .prev,
 .calendar .month .next {
   cursor: pointer;
+  color: #79132a;
+  background-color: transparent;
+  display: grid;
+  place-items: center;
 }
-.calendar .month .prev:hover,
-.calendar .month .next:hover {
-  color: var(--primary-clr);
-}
+
 .calendar .weekdays {
   width: 100%;
   height: 100px;
@@ -269,7 +262,7 @@
 .right .today-date .event-date {
   font-size: 1rem;
   font-weight: 400;
-  color: #fff;
+  color: #878895;
 }
 .events {
   width: 100%;
@@ -283,6 +276,7 @@
 }
 .events .event {
   position: relative;
+  align-items: start;
   width: 95%;
   min-height: 70px;
   display: flex;
@@ -292,7 +286,7 @@
   padding: 0 20px;
   padding-left: 50px;
   color: #fff;
-  background: linear-gradient(90deg, #3f4458, transparent);
+  background: linear-gradient(90deg, #aa435a, transparent);
   cursor: pointer;
 }
 /* even event */
@@ -357,8 +351,8 @@
   align-items: center;
   justify-content: center;
   font-size: 1rem;
-  color: #fff;
-  border: 2px solid #fff;
+  color: #878895;
+  border: 2px solid #878895;
   opacity: 0.5;
   border-radius: 50%;
   background-color: transparent;
@@ -402,7 +396,7 @@
   align-items: center;
   justify-content: space-between;
   padding: 0 20px;
-  color: #373c4f;
+  color: #79132a;
   border-bottom: 1px solid #f5f5f5;
 }
 .add-event-header .close {
@@ -441,7 +435,7 @@
   padding: 0 10px;
   font-size: 1rem;
   font-weight: 400;
-  color: #373c4f;
+  color: #79132a;
 }
 .add-event-body .add-event-input input::placeholder {
   color: #a5a5a5;
@@ -479,12 +473,15 @@
 /* media queries */
 
 @media screen and (max-width: 1000px) {
-  body {
-    align-items: flex-start;
-    justify-content: flex-start;
+  .page__calendario {
+    margin: 0;
+    padding: 0;
+    height: fit-content;
+    width: 100vw;
   }
   .container__calendario {
     min-height: 100vh;
+    height: 100%;
     flex-direction: column;
     border-radius: 0;
   }
@@ -535,6 +532,10 @@
   }
   .right .today-date {
     padding: 20px;
+  }
+
+  .container__calendario {
+    width: 100%;
   }
 }
 

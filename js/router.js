@@ -8,6 +8,7 @@ import { loadScreenRecreacao } from './recreacao.js';
 import { loadScreenEncontros } from './encontros.js';
 import { loadScreenQuiz } from './quiz/quiz.js';
 import { loadScreenQuizQuestion } from './quiz/questions.js';
+import { loadCalendarioScreen } from './calendario.js';
 
 
 const routes = {
@@ -42,6 +43,7 @@ const route = async () => {
   } else if (path == "/voluntario") {
     loadScreenVoluntario()
   } else if (path == "/calendario") {
+    loadCalendarioScreen()
     alterColor('#79132A')
   } else if (path == "/parceiro") {
     loadScreenParceiro()
