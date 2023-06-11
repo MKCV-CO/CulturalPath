@@ -236,11 +236,22 @@
 .data-estado__card {
   display: flex;
   width: 100%;
+  max-width: 600px;
   flex-direction: column;
-  padding-top: 32px;
-  justify-content: start;
+  padding-top: 64px;
+  justify-content: space-between;
   gap: 6px;
   height: 100%;
+}
+
+@media (min-width: 1500px) {
+  .cultural__estado {
+    align-items: start;
+    justify-content: space-around;
+  }
+  .cultural__data-estado {
+    width: 60%;
+  }
 }
 
 @media (min-width: 800px) {

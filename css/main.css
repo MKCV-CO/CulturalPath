@@ -52,6 +52,8 @@ section {
 }
 
 .button_home {
+  display: grid;
+  place-items: center;
   color: #fff;
   font-weight: 700;
   border: none;
@@ -102,6 +104,8 @@ section {
 }
 
 .button_seja_voluntario {
+  display: grid;
+  place-items: center;
   color: #fff;
   font-weight: 700;
   border: none;
@@ -136,6 +140,8 @@ section {
 }
 
 .button_empresa {
+  display: grid;
+  place-items: center;
   color: #fff;
   font-weight: 700;
   border: none;
@@ -149,7 +155,8 @@ section {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 30vw;
+  height: fit-content;
+  padding: 32px;
   background-image: url(../img/back-to-school-bell-icon-3d-illustration-png\ 1.png);
   background-position: 10%;
   background-position-y: center;
@@ -182,6 +189,8 @@ section {
 }
 
 .button_calendario {
+  display: grid;
+  place-items: center;
   color: #fff;
   font-weight: 700;
   border: none;
@@ -198,13 +207,21 @@ section {
   padding-left: 32px;
 }
 
-@media (max-width: 768px) {
+/* @media (max-width: 768px) {
   .container-seja-voluntario {
+    grid-template-columns: 0 100%;
+  }
+} */
+
+@media (max-width: 1000px) {
+  .container-seja-voluntario {
+    place-items: center;
     grid-template-columns: 0 100%;
   }
 
   .seja_voluntario {
-    background-size: 100%;
+    background-size: 40%;
+    background-position: right bottom;
   }
 
   body {
@@ -218,8 +235,8 @@ section {
     height: 100vh;
   }
   .title_home {
-    font-size: 2.5rem;
-    line-height: 2.5rem;
+    font-size: 2rem;
+    line-height: 2rem;
   }
   .text_home {
     width: 80%;
@@ -245,7 +262,7 @@ section {
     font-size: 2rem;
   }
   .text_voluntario {
-    width: 90%;
+    width: 60%;
     text-align: start;
     font-size: 1rem;
   }
@@ -271,11 +288,13 @@ section {
 
   .calendario {
     color: #000;
-    height: 70vh;
+    /* height: fit-content; */
+    min-height: 70vh;
     background-size: 50%;
     font-size: 1rem;
     font-weight: 300;
-    background-position: -50% -35%;
+    /* background-image: none; */
+    background-position: right center;
   }
   .button_empresa {
     font-size: 1rem;
@@ -295,9 +314,35 @@ section {
   }
   .container-empresa {
     grid-template-columns: 0% 100%;
+    /* height: 100%; */
   }
 
   .video__title {
     font-size: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .calendario {
+    background-image: none;
+  }
+
+  .container-seja-voluntario {
+    place-items: start;
+    grid-template-columns: 0 100%;
+  }
+
+  .seja_voluntario {
+    background-size: 100%;
+  }
+}
+
+@media (max-width: 500px) {
+  .text_voluntario {
+    width: 100%;
+  }
+
+  .title_empresa {
+    font-size: 2rem;
   }
 }

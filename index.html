@@ -5,6 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Home</title>
+    <script>// Verificar se a página foi carregada corretamente
+      document.addEventListener('DOMContentLoaded', function () {
+        // Verificar se a rota não foi encontrada
+        if (window.location.pathname !== '/index.html') {
+          // Redirecionar para a página inicial
+          window.location.href = '/index.html';
+        }
+      });</script>
     <!-- IMPORT FIREBASE -->
     <script src="https://www.gstatic.com/firebasejs/8.3.3/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.3.3/firebase-storage.js"></script>
@@ -98,10 +106,15 @@
     </script>
     <header>
       <div class="container_header">
+        <a href="/" class="header__container-image">
         <img
           class="logo_culturalPath"
           src="./img/logoCulturalPath.png"
-          alt="" />
+          alt=""
+          href="/"
+          />
+        </a>
+          
         <ul class="navbar">
           <li><a href="/">Cultural Path</a></li>
           <li><a href="/encontros" onclick="route()">Encontros</a></li>
@@ -134,9 +147,9 @@
           Lorem Ipsum is simply dummy text of the printing and typesetting industry.
           Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
         </p>
-        <button class="button_home">
+        <a href="/" class="button_home">
           venha fazer parte
-        </button>
+        </a>
       </div>
     </section>
     <section class="seja_voluntario">
@@ -149,9 +162,9 @@
             Você pode ajudar de várias formas
             além da doação em dinheiro. Junte-se a nós e transforme vidas.
           </p>
-          <button class="button_seja_voluntario">
+          <a href="/voluntario" onclick="route()" class="button_seja_voluntario">
             quero ajudar
-          </button>
+          </a>
         </div>
       </div>
       </div>
@@ -165,9 +178,9 @@
           Você pode ajudar de várias formas além da doação em dinheiro.
           Junte-se a nós e transforme vidas.
         </p>
-        <button class="button_empresa">
+        <a href="/parceiro" onclick="route()" class="button_empresa">
           quero ajudar
-        </button>
+        </a>
     
       </div>
     
@@ -183,9 +196,9 @@
             Você pode ajudar de várias formas
             além da doação em dinheiro. Junte-se a nós e transforme vidas.
           </p>
-          <button class="button_calendario">
+          <a href="/calendario" onclick="route()" class="button_calendario">
             quero ajudar
-          </button>
+          </a>
         </div>
       </div>
     </section></main>
@@ -216,7 +229,7 @@
           <div class="links-button">
             <a href="/">Página inicial</a>
             <a href="/parceiro" onclick="route()">Seja nosso Parceiro</a>
-            <button class="button-footer" id="button-footer">Doe Agora</button>
+            <a href="/doe" onclick="route()" class="button-footer" id="button-footer">Doe Agora</a>
           </div>
           <div class="rede-social">
             <h5>Nossas redes:</h5>
@@ -232,4 +245,5 @@
     </footer>
     
   </body>
+
 </html>

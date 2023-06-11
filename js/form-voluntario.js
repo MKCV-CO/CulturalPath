@@ -9,6 +9,8 @@ let input__rg
 let input__diploma
 
 export const loadScreenVoluntario = () => {
+
+
   alterColor('#7675DC')
   getElementsForm()
   eventsForms()

@@ -44,6 +44,10 @@ header {
   font-weight: 500;
 }
 
+.logo_culturalPath {
+  width: 100px;
+}
+
 @media (max-width: 1090px) {
   header {
     display: flex;
@@ -96,7 +100,7 @@ header {
     padding: 16px;
   }
   .logo_culturalPath {
-    width: 15%;
+    width: 50px;
   }
   .button_doe {
     width: 80px;

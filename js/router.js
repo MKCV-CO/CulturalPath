@@ -60,7 +60,4 @@ const route = async () => {
 }
 
 
-
-
-
 window.route = route;
