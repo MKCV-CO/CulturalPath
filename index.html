@@ -105,7 +105,7 @@
       new window.VLibras.Widget('https://vlibras.gov.br/app')
     </script>
     <header>
-      <div class="container_header">
+      <!-- <div class="container_header">
         <a href="/" class="header__container-image">
         <img
           class="logo_culturalPath"
@@ -113,24 +113,35 @@
           alt=""
           href="/"
           />
-        </a>
+        </a> -->
           
-        <ul class="navbar">
+        <!-- <ul class="navbar">
           <li><a href="/">Cultural Path</a></li>
           <li><a href="/encontros" onclick="route()">Encontros</a></li>
           <li><a href="/parceiro" onclick="route()">Seja um Parceiro</a></li>
           <li><a href="/calendario" onclick="route()">Calendário</a></li>
           <li><a href="/voluntario" onclick="route()">Voluntários</a></li>
           <li><a href="/recreacao" onclick="route()">Recreação</a></li>
-          <!-- <li><a href="/quiz" onclick="route()">Quiz</a></li> -->
         </ul>
-        <a class="button_doe" id="button_doe" href="/doe" onclick="route()"
-          >DOE</a
-        >
+        
         <div id="menu-icon" class="menu-icon">
           <i class="fas fa-bars"></i>
         </div>
-      </div>
+      </div> -->
+      <nav class="navbar">
+        <div class="navbar__logo">Logo</div>
+        <div class="navbar__menu">
+          <input type="checkbox" id="navbar__checkbox" class="navbar__checkbox">
+          <label for="navbar__checkbox" class="navbar__burger"></label>
+          <ul class="navbar__links">
+            <li><a href="#">Item 1</a></li>
+            <li><a href="#">Item 2</a></li>
+            <li><a href="#">Item 3</a></li>
+            <li><a href="#">Item 4</a></li>
+          </ul>
+          <button class="navbar__close">Fechar</button>
+        </div>
+      </nav>
       
     </header>
 
