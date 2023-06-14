@@ -6,9 +6,7 @@
 - [SOBRE](#sobre)
 - [HOME](#home)
 - [TECNOLOGIAS APLICADAS](#tecnologias-aplicadas)
-- [FERRAMENTAS](#ferramentas)
 - [CONCEITOS APLICADOS](#conceitos-aplicados)
-- [DOCUMENTACAO](#documentacao)
 - [COLABORADORES](#colaboradores)
 
 </div>
@@ -53,19 +51,8 @@ Esse projeto foi proposto pelo professor de PWFE (Programação Web Front End), 
 
 
    <h1>TECNOLOGIAS APLICADAS</h1>
-
-<div>
-
-- HTML5
-- CSS3
-- JAVASCRIPT
-- NODE JS
-
-</div>
-
-<h1>FERRAMENTAS</h1> 
        <a href="https://skillicons.dev">
-      <img src="https://skillicons.dev/icons?i=vscode,github,git,firebase,&theme=dark" />
+      <img src="https://skillicons.dev/icons?i=vscode,github,git,js,nodejs,html,css,firebase,&theme=dark" />
     </a>
     
 <h1>CONCEITOS APLICADOS</h1>   
@@ -86,6 +73,6 @@ Esse projeto foi proposto pelo professor de PWFE (Programação Web Front End), 
 | NOMES                                                                                                                                                                                      |                                                     GITHUB                                                      |                                       FOTO                                       |
 | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :-------------------------------------------------------------------------------------------------------------: | :------------------------------------------------------------------------------: |
 | <a href="https://github.com/VINICIUSNUNES137"><img src="https://img.shields.io/badge/DESENVOLVEDOR-VINICIUS%20NUNES-informational?style=for-the-badge&logo=appveyorlabelColor=FF00FF"></a> | <a href="https://github.com/VINICIUSNUNES137"><img src="https://skillicons.dev/icons?i=github&theme=dark"/></a> | <img src="https://avatars.githubusercontent.com/u/90266473?v=4" height="50"></a> |
-| <a href="https://github.com/Cotilen"><img src="https://img.shields.io/badge/DESENVOLVEDOR-CLEITON%20CRUZ-informational?style=for-the-badge&logo=appveyorlabelColor=FF00FF"></a>      | <a href="https://github.com/Cotilen"><img src="https://skillicons.dev/icons?i=github&theme=dark"/></a> | <img src="https://avatars.githubusercontent.com/u/109962577?v=4" height="50"></a> |
 | <a href="https://github.com/Kaue-code30"><img src="https://img.shields.io/badge/DESENVOLVEDOR-KAUE%20LIMA%20-informational?style=for-the-badge&logo=appveyorlabelColor=FF00FF"></a>      | <a href="https://github.com/Kaue-code30"><img src="https://skillicons.dev/icons?i=github&theme=dark"/></a> | <img src="https://avatars.githubusercontent.com/u/109984995?v=4" height="50"></a> |
+| <a href="https://github.com/Cotilen"><img src="https://img.shields.io/badge/DESENVOLVEDOR-CLEITON%20CRUZ-informational?style=for-the-badge&logo=appveyorlabelColor=FF00FF"></a>      | <a href="https://github.com/Cotilen"><img src="https://skillicons.dev/icons?i=github&theme=dark"/></a> | <img src="https://avatars.githubusercontent.com/u/109962577?v=4" height="50"></a> |
 | <a href="https://github.com/Ma7hs"><img src="https://img.shields.io/badge/DESENVOLVEDOR-MATHEUS%20SIQUEIRA%20-informational?style=for-the-badge&logo=appveyorlabelColor=FF00FF"></a>      | <a href="https://github.com/Ma7hs"><img src="https://skillicons.dev/icons?i=github&theme=dark"/></a> | <img src="https://avatars.githubusercontent.com/u/87048682?v=4" height="50"></a> |
