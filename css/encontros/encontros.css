@@ -1,3 +1,8 @@
+.page__encontros {
+  min-height: 100vh;
+  height: fit-content;
+}
+
 .encontros__title {
   display: flex;
   align-items: center;
