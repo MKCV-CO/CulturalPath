@@ -1,162 +1,142 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Home</title>
-    <script>// Verificar se a página foi carregada corretamente
-      document.addEventListener('DOMContentLoaded', function () {
-        // Verificar se a rota não foi encontrada
-        if (window.location.pathname !== '/index.html') {
-          // Redirecionar para a página inicial
-          window.location.href = '/index.html';
-        }
-      });</script>
-    <!-- IMPORT FIREBASE -->
-    <script src="https://www.gstatic.com/firebasejs/8.3.3/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.3.3/firebase-storage.js"></script>
-    <!-- IMPORT FIREBASE -->
 
-    <!-- IMPORT FONT -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;700&display=swap"
-      rel="stylesheet" />
-    <!-- IMPORT FONT -->
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Home</title>
+  <script>// Verificar se a página foi carregada corretamente
+    document.addEventListener('DOMContentLoaded', function () {
+      // Verificar se a rota não foi encontrada
+      if (window.location.pathname !== '/index.html') {
+        // Redirecionar para a página inicial
+        window.location.href = '/index.html';
+      }
+    });</script>
+  <!-- IMPORT FIREBASE -->
+  <script src="https://www.gstatic.com/firebasejs/8.3.3/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.3.3/firebase-storage.js"></script>
+  <!-- IMPORT FIREBASE -->
 
-    <!-- IMPORT GLIDER > SLIDER -->
-    <link
-      href="https://cdn.jsdelivr.net/npm/glider-js@1/glider.min.css"
-      rel="stylesheet" />
-    <!-- IMPORT GLIDER > SLIDER -->
+  <!-- IMPORT FONT -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;700&display=swap"
+    rel="stylesheet" />
+  <!-- IMPORT FONT -->
 
-    <!-- IMPORT JQUERY VALIDAÇÃO FORM -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <!-- IMPORT JQUERY VALIDAÇÃO FORM -->
+  <!-- IMPORT GLIDER > SLIDER -->
+  <link href="https://cdn.jsdelivr.net/npm/glider-js@1/glider.min.css" rel="stylesheet" />
+  <!-- IMPORT GLIDER > SLIDER -->
 
-    <!-- IMPORT FONTAWESOME -->
-    <script
-      src="https://kit.fontawesome.com/324b71f187.js"
-      crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/glider-js@1/glider.min.js"></script>
-    <!-- IMPORT FONTAWESOME -->
+  <!-- IMPORT JQUERY VALIDAÇÃO FORM -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <!-- IMPORT JQUERY VALIDAÇÃO FORM -->
 
-    <!-- IMPORT JS -->
-    <script src="./js/app.js" defer type="module"></script>
-    <script src="./js/form-voluntario.js" defer type="module"></script>
-    <script src="./js/form-parceiro.js" defer type="module"></script>
-    <script src="./js/quiz/quiz.js" defer type="module"></script>
-    <script src="./js/recreacao.js" defer type="module"></script>
-    <script src="./js/encontros.js" defer type="module"></script>
-    <script src="./js/calendario.js" defer type="module"></script>
-    <!-- IMPORT JS -->
+  <!-- IMPORT FONTAWESOME -->
+  <script src="https://kit.fontawesome.com/324b71f187.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/glider-js@1/glider.min.js"></script>
+  <!-- IMPORT FONTAWESOME -->
 
-    <!-- LINKS CSS -->
-    <link rel="stylesheet" href="./css/reset.css" />
-    <link rel="stylesheet" href="./css/body.css" />
-    <link rel="stylesheet" href="./css/header.css" />
-    <link rel="stylesheet" href="./css/main.css" />
-    <link rel="stylesheet" href="./css/footer.css" />
-    <link rel="stylesheet" href="./css/recreacao/recreacao.css" />
-    <link rel="stylesheet" href="./css/voluntario/voluntario.css" />
-    <link rel="stylesheet" href="./css/parceiro/parceiro.css" />
-    <link rel="stylesheet" href="./css/quiz/quiz.css" />
-    <link rel="stylesheet" href="./css/calendario/calendario.css" />
-    <link rel="stylesheet" href="./css/quiz/quiz-perguntas.css" />
-    <link rel="stylesheet" href="./css/doacao/doacao.css" />
-    <link rel="stylesheet" href="./css/encontros/encontros.css" />
-    <!-- LINKS CSS -->
+  <!-- IMPORT JS -->
+  <script src="./js/app.js" defer type="module"></script>
+  <script src="./js/form-voluntario.js" defer type="module"></script>
+  <script src="./js/form-parceiro.js" defer type="module"></script>
+  <script src="./js/quiz/quiz.js" defer type="module"></script>
+  <script src="./js/recreacao.js" defer type="module"></script>
+  <script src="./js/encontros.js" defer type="module"></script>
+  <script src="./js/calendario.js" defer type="module"></script>
+  <script src="./js/nav-bar.js" defer type="module"></script>
+  <!-- IMPORT JS -->
 
-    <!-- CLOUDFARE -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
-      integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer" />
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
-    <!-- CLOUDFARE -->
-    <link rel="stylesheet" href="./notification/iziToast.min.css" />
-    <script
-      src="./notification/iziToast.min.js"
-      type="text/javascript"></script>
-    <!-- META CALENDARIO -->
-    <meta
-      name="description"
-      content="Stay organized with our user-friendly Calendar featuring events, reminders, and a customizable interface. Built with HTML, CSS, and JavaScript. Start scheduling today!" />
-    <meta
-      name="keywords"
-      content="calendar, events, reminders, javascript, html, css, open source coding" />
-    <!-- META CALENDARIO -->
-  </head>
-  <body>
-    <div vw class="enabled">
-      <div vw-access-button class="active"></div>
-      <div vw-plugin-wrapper>
-        <div class="vw-plugin-top-wrapper"></div>
-      </div>
+  <!-- LINKS CSS -->
+  <link rel="stylesheet" href="./css/reset.css" />
+  <link rel="stylesheet" href="./css/body.css" />
+  <link rel="stylesheet" href="./css/header.css" />
+  <link rel="stylesheet" href="./css/main.css" />
+  <link rel="stylesheet" href="./css/footer.css" />
+  <link rel="stylesheet" href="./css/recreacao/recreacao.css" />
+  <link rel="stylesheet" href="./css/voluntario/voluntario.css" />
+  <link rel="stylesheet" href="./css/parceiro/parceiro.css" />
+  <link rel="stylesheet" href="./css/quiz/quiz.css" />
+  <link rel="stylesheet" href="./css/calendario/calendario.css" />
+  <link rel="stylesheet" href="./css/quiz/quiz-perguntas.css" />
+  <link rel="stylesheet" href="./css/doacao/doacao.css" />
+  <link rel="stylesheet" href="./css/encontros/encontros.css" />
+  <!-- LINKS CSS -->
+
+  <!-- CLOUDFARE -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+    integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
+  <!-- CLOUDFARE -->
+  <link rel="stylesheet" href="./notification/iziToast.min.css" />
+  <script src="./notification/iziToast.min.js" type="text/javascript"></script>
+  <!-- META CALENDARIO -->
+  <meta name="description"
+    content="Stay organized with our user-friendly Calendar featuring events, reminders, and a customizable interface. Built with HTML, CSS, and JavaScript. Start scheduling today!" />
+  <meta name="keywords" content="calendar, events, reminders, javascript, html, css, open source coding" />
+  <!-- META CALENDARIO -->
+</head>
+
+<body>
+  <div vw class="enabled">
+    <div vw-access-button class="active"></div>
+    <div vw-plugin-wrapper>
+      <div class="vw-plugin-top-wrapper"></div>
     </div>
-    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
-    <script>
-      new window.VLibras.Widget('https://vlibras.gov.br/app')
-    </script>
-    <header>
-      <!-- <div class="container_header">
-        <a href="/" class="header__container-image">
-        <img
-          class="logo_culturalPath"
-          src="./img/logoCulturalPath.png"
-          alt=""
-          href="/"
-          />
-        </a> -->
-          
-        <!-- <ul class="navbar">
-          <li><a href="/">Cultural Path</a></li>
-          <li><a href="/encontros" onclick="route()">Encontros</a></li>
-          <li><a href="/parceiro" onclick="route()">Seja um Parceiro</a></li>
-          <li><a href="/calendario" onclick="route()">Calendário</a></li>
-          <li><a href="/voluntario" onclick="route()">Voluntários</a></li>
-          <li><a href="/recreacao" onclick="route()">Recreação</a></li>
-        </ul>
-        
-        <div id="menu-icon" class="menu-icon">
-          <i class="fas fa-bars"></i>
-        </div>
-      </div> -->
-      <nav class="navbar">
-        <div class="navbar__logo">Logo</div>
-        <div class="navbar__menu">
-          <input type="checkbox" id="navbar__checkbox" class="navbar__checkbox">
-          <label for="navbar__checkbox" class="navbar__burger"></label>
-          <ul class="navbar__links">
-            <li><a href="#">Item 1</a></li>
-            <li><a href="#">Item 2</a></li>
-            <li><a href="#">Item 3</a></li>
-            <li><a href="#">Item 4</a></li>
-          </ul>
-          <button class="navbar__close">Fechar</button>
-        </div>
-      </nav>
-      
-    </header>
+  </div>
+  <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+  <script>
+    new window.VLibras.Widget('https://vlibras.gov.br/app')
+  </script>
+  <header>
 
-    <main id="root">
-      <section class="home">
-      
+
+    <nav class="nav">
+      <a class="logo"><img class="logo-img" src="./img/logoCulturalPath.png" alt="" /></a>
+      </ul><a class="button_doe btn_disable" id="button_doe-oculto" href="/doe" onclick="route()">DOE</a>
+
+      <div class="mobile-menu">
+        <div class="line1"></div>
+        <div class="line2 mid"></div>
+        <div class="line3"></div>
+      </div>
+      <ul class="nav-list">
+        <li><a href="/" class="nav-list__animation">Home</a></li>
+        <li>
+          <a href="/encontros" onclick="route()" class="nav-list__animation">Encontros</a>
+        </li>
+        <li><a href="/parceiro" onclick="route()" class="nav-list__animation">Parceiro</a></li>
+        <li>
+          <a href="/calendario" onclick="route()" class="nav-list__animation">Calendário</a>
+        </li>
+        <li>
+          <a href="/voluntario" onclick="route()" class="nav-list__animation">Voluntário</a>
+        </li>
+        <li>
+          <a href="/recreacao" onclick="route()" class="nav-list__animation">Recreação</a>
+        </li>
+      </ul><a class="button_doe btn_enable" id="button_doe" href="/doe" onclick="route()">DOE</a>
+    </nav>
+  </header>
+
+  <main id="root">
+    <section class="home">
+
       <div class="containerHome">
         <h1 class="title_home">
           Cultural
           <span style="color: #009d78;">P</span><span style="color:#0D9ECC;">a</span><span
-            style="color: #E99922;">t</span><span style="color: #79132a;">h</span>, mudando vidas.
+            style="color: #E99922;">t</span><span style="color: #79132a;">h</span>, mudando vidas
         </h1>
         <p class="text_home">
-          Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-          Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
+          Um futuro onde a discriminação cultural seja mínima, fortalecendo identidades, valorizando a expressão
+          cultural e promovendo a capacidade de se relacionar e respeitar o próximo
         </p>
         <a href="/" class="button_home">
           venha fazer parte
@@ -167,7 +147,7 @@
       <div class="container-seja-voluntario">
         <div class="container_text">
           <h1 class="title_voluntario">
-            The standard Lorem Ipsum passage, used since the 1500s
+            Seja um voluntário Cultural Path
           </h1>
           <p class="text_voluntario">
             Você pode ajudar de várias formas
@@ -192,11 +172,11 @@
         <a href="/parceiro" onclick="route()" class="button_empresa">
           quero ajudar
         </a>
-    
+
       </div>
-    
+
     </section>
-    
+
     <section class="calendario">
       <div class="container-empresa">
         <div class="container_text">
@@ -212,49 +192,44 @@
           </a>
         </div>
       </div>
-    </section></main>
-    <footer>
-      <div class="container-footer">
-        <div class="container-logo-contato">
-          <img class="logo-footer" src="./img/logoCulturalPath.png" alt="" />
-          <div class="teste">
-            <div class="fale-conosco">
-              <h5>Fale Conosco</h5>
-              <span style="color: black; font-size: 0.5rem"
-                >contao@culturalpath.org.br</span
-              >
-              <span style="color: black; font-size: 0.5rem"
-                >55 (11)942316789</span
-              >
-            </div>
-            <div class="horario-funcionamento">
-              <h5>Horário de funcionamento</h5>
-              <span style="color: black; font-size: 0.5rem"
-                >De Segunda a Sexta das 09h00 às 18h00</span
-              >
-            </div>
+    </section>
+  </main>
+  <footer>
+    <div class="container-footer">
+      <div class="container-logo-contato">
+        <img class="logo-footer" src="./img/logoCulturalPath.png" alt="" />
+        <div class="teste">
+          <div class="fale-conosco">
+            <h5>Fale Conosco</h5>
+            <span style="color: black; font-size: 0.5rem">contao@culturalpath.org.br</span>
+            <span style="color: black; font-size: 0.5rem">55 (11)942316789</span>
           </div>
-        </div>
-
-        <div class="container-rede-social">
-          <div class="links-button">
-            <a href="/">Página inicial</a>
-            <a href="/parceiro" onclick="route()">Seja nosso Parceiro</a>
-            <a href="/doe" onclick="route()" class="button-footer" id="button-footer">Doe Agora</a>
-          </div>
-          <div class="rede-social">
-            <h5>Nossas redes:</h5>
-            <div class="icones">
-              <i class="fab fa-instagram"></i>
-              <i class="fab fa-linkedin"></i>
-              <i class="fab fa-facebook"></i>
-            </div>
+          <div class="horario-funcionamento">
+            <h5>Horário de funcionamento</h5>
+            <span style="color: black; font-size: 0.5rem">De Segunda a Sexta das 09h00 às 18h00</span>
           </div>
         </div>
       </div>
-      <div class="barra"></div>
-    </footer>
-    
-  </body>
+
+      <div class="container-rede-social">
+        <div class="links-button">
+          <a href="/">Página inicial</a>
+          <a href="/parceiro" onclick="route()">Seja nosso Parceiro</a>
+          <!-- <a href="/doe" onclick="route()" class="button-footer" id="button-footer">Doe Agora</a> -->
+        </div>
+        <div class="rede-social">
+          <h5>Nossas redes:</h5>
+          <div class="icones">
+            <i class="fab fa-instagram"></i>
+            <i class="fab fa-linkedin"></i>
+            <i class="fab fa-facebook"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="barra"></div>
+  </footer>
+
+</body>
 
 </html>

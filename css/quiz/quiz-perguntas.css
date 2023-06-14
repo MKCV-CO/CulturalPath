@@ -16,6 +16,8 @@
 }
 
 .question {
+  min-height: 100px;
+  height: 100%;
   font-size: 1.4rem;
 }
 
@@ -34,6 +36,7 @@
   flex-direction: column;
   gap: 20px;
 }
+
 .answer {
   padding-left: 30px;
   color: #000;
@@ -83,12 +86,15 @@ button:hover {
   .content {
     width: 80%;
   }
+
   .answers {
     width: 100%;
   }
+
   .answer {
     width: 100%;
   }
+
   .button {
     width: 40%;
   }

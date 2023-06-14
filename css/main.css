@@ -2,14 +2,14 @@ html {
   scroll-behavior: smooth;
 }
 
-/* Barra de Rolagem */
 
-/* Fundo que corre */
 
 main {
   display: flex;
   flex-direction: column;
   height: fit-content;
+  padding-top: 100px;
+
 }
 
 :root {
@@ -46,6 +46,7 @@ section {
 }
 
 .text_home {
+  text-align: start;
   font-size: 1.1rem;
   width: 50%;
   color: #fff;
@@ -66,41 +67,43 @@ section {
 .seja_voluntario {
   display: flex;
   align-items: center;
-  justify-content: center;
-  height: 35vw;
+  height: fit-content;
   background-image: url(../img/Meu\ projeto\ 2.png);
-  background-position: left;
-  background-position-y: bottom;
+  background-position: bottom right;
   background-repeat: no-repeat;
-  background-size: 40%;
+  /* background-size: 40%; */
 }
 
 .container_text {
+  height: 100%;
   display: flex;
   flex-direction: column;
   gap: 24px;
   grid-area: text;
-  padding-left: 16px;
+  padding: 100px;
 }
 
 .container-seja-voluntario {
+  min-height: fit-content;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   display: grid;
-  height: 100%;
+  height: fit-content;
   grid-template-areas: 'empty text';
-  grid-template-columns: 40% 60%;
+  grid-template-columns: 0% 80%;
 }
 
 .title_voluntario {
-  width: 90%;
-  font-size: 3rem;
+  font-size: 3.5rem;
+  font-weight: 800;
 }
+
 .text_voluntario {
   width: 100%;
   font-size: 1rem;
   text-align: start;
+  width: 80%;
 }
 
 .button_seja_voluntario {
@@ -134,9 +137,10 @@ section {
 }
 
 .text_empresas {
+  text-align: start;
   color: #fff;
   font-size: 1.1rem;
-  width: 30%;
+  width: 40%;
 }
 
 .button_empresa {
@@ -152,6 +156,7 @@ section {
 }
 
 .calendario {
+  min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -185,7 +190,9 @@ section {
 .title_empresa {
   width: 100%;
   font: bold;
-  font-size: 4.2rem;
+  font-size: 4rem;
+  text-wrap: nowrap;
+
 }
 
 .button_calendario {
@@ -215,11 +222,14 @@ section {
 
 @media (max-width: 1000px) {
   .container-seja-voluntario {
-    place-items: center;
+    place-items: start;
+    text-align: center;
+    /* height: 50vh; */
     grid-template-columns: 0 100%;
   }
 
   .seja_voluntario {
+    height: fit-content;
     background-size: 40%;
     background-position: right bottom;
   }
@@ -227,22 +237,27 @@ section {
   body {
     overflow-x: hidden;
   }
+
   section {
     height: 150vw;
   }
+
   .home {
     padding-left: 20px;
     height: 100vh;
   }
+
   .title_home {
     font-size: 2rem;
     line-height: 2rem;
   }
+
   .text_home {
     width: 80%;
     font-size: 1rem;
     text-align: start;
   }
+
   .button_home {
     display: flex;
     align-items: center;
@@ -253,14 +268,16 @@ section {
   }
 
   .container_text {
+    padding: 20px;
     width: 100vw;
   }
 
   .title_voluntario {
     width: 100%;
     text-align: start;
-    font-size: 2rem;
+    font-size: 1.75rem;
   }
+
   .text_voluntario {
     width: 60%;
     text-align: start;
@@ -268,8 +285,12 @@ section {
   }
 
   .seja_voluntario {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     height: 100vh;
   }
+
   .button_seja_voluntario {
     font-size: 1rem;
     height: 40px;
@@ -280,6 +301,7 @@ section {
     padding-left: 20px;
     height: 100vh;
   }
+
   .text_empresas {
     width: 80%;
     font-size: 1rem;
@@ -288,22 +310,24 @@ section {
 
   .calendario {
     color: #000;
-    /* height: fit-content; */
     min-height: 70vh;
-    background-size: 50%;
+    background-size: 45%;
     font-size: 1rem;
     font-weight: 300;
     /* background-image: none; */
     background-position: right center;
   }
+
   .button_empresa {
     font-size: 1rem;
     height: 40px;
     width: 200px;
   }
+
   .title_empresa {
     font-size: 2rem;
   }
+
   .button_calendario {
     font-size: 1rem;
     height: 40px;
@@ -312,6 +336,7 @@ section {
     color: #fff;
     box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.1);
   }
+
   .container-empresa {
     grid-template-columns: 0% 100%;
     /* height: 100%; */
@@ -328,12 +353,16 @@ section {
   }
 
   .container-seja-voluntario {
-    place-items: start;
+    /* place-items: center; */
     grid-template-columns: 0 100%;
   }
 
   .seja_voluntario {
-    background-size: 100%;
+    background-size: 50%;
+  }
+
+  .text_voluntario {
+    width: 80%;
   }
 }
 

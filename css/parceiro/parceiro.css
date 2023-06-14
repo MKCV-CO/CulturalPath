@@ -29,6 +29,7 @@
   color: #fff;
   font-size: 2.5rem;
   font-weight: 800;
+
 }
 
 .motivo__container {
@@ -165,7 +166,7 @@
   flex-direction: column;
 }
 
-.form__parceiro__data > input,
+.form__parceiro__data>input,
 #motivo {
   width: 100%;
   /* max-width: 100%; */
@@ -194,6 +195,7 @@
     justify-content: center;
     width: 100%;
   }
+
   .motivo__text {
     width: 80%;
   }
@@ -201,6 +203,7 @@
   .section__parceiro__title {
     text-align: center;
   }
+
   .parceiro__formulario__content {
     flex-direction: column-reverse;
     width: 100%;
@@ -217,7 +220,7 @@
     width: 100%;
   }
 
-  .form__parceiro__data > input,
+  .form__parceiro__data>input,
   select,
   .form__parceiro__radio {
     width: 100%;
@@ -229,9 +232,11 @@
   .valores__container {
     place-items: start;
   }
+
   .valor__content__description {
     width: 300px;
   }
+
   .image__parceiro__home {
     width: 300px;
     height: 300px;
@@ -252,6 +257,7 @@
     text-align: center;
     justify-content: center;
   }
+
   .valor {
     align-items: center;
     text-align: center;
