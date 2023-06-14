@@ -22,7 +22,7 @@ header {
   position: fixed;
   font-weight: 600;
   width: 100vw;
-  z-index: 999999999999999999999999;
+  z-index: 9;
 }
 
 @media (max-width: 9999px) {
