@@ -65,7 +65,7 @@ Esse projeto foi proposto pelo professor de PWFE (Programação Web Front End), 
 
 <h1>FERRAMENTAS</h1> 
        <a href="https://skillicons.dev">
-      <img src="https://skillicons.dev/icons?i=vscode,github,git,firebase,&theme=dark" />
+      <img src="https://skillicons.dev/icons?i=vscode,github,git,firebase,prisma,express,&theme=dark" />
     </a>
     
 <h1>CONCEITOS APLICADOS</h1>   
